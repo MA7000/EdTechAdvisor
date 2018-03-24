@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:title="Add to My Library"
+        android:icon="@android:drawable/btn_star"
+        app:showAsAction = "always"
+        android:id="@+id/star"
+        />
+
+    <item
+        android:id="@+id/share"
+        android:icon="@android:drawable/ic_menu_share"
+        android:title="Share"
+        app:showAsAction="always"
+        />
+
+    <item
+        android:id="@+id/save"
+        android:icon="@android:drawable/ic_menu_save"
+        android:title="Save"
+        app:showAsAction="never"
+        />
+
+    <item
+        android:id="@+id/signup"
+        android:icon="@android:drawable/ic_menu_save"
+        android:title="Sign Up"
+        app:showAsAction="never"
+        android:onClick="signup"></item>
+
+
+    <item
+        android:id="@+id/viewLibrary"
+        android:title = "Library of Tools"
+        android:icon="@android:drawable/ic_menu_gallery"
+        app:showAsAction="always"
+        android:onClick = "viewLibrary"></item>
+
+
+    <item
+        android:id="@+id/addRandom"
+        android:title = "Add Random"
+        android:icon = "@android:drawable/ic_input_add"
+        app:showAsAction="never"></item>
+        <!--android:onClick="addRandomObject"></item>-->
+
+
+
+
+
+
+
+</menu>
