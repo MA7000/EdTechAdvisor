@@ -39,13 +39,6 @@
         android:onClick = "viewLibrary"></item>
 
 
-    <item
-        android:id="@+id/addRandom"
-        android:title = "Add Random"
-        android:icon = "@android:drawable/ic_input_add"
-        app:showAsAction="never"></item>
-        <!--android:onClick="addRandomObject"></item>-->
-
 
 
 

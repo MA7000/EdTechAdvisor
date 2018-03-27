@@ -7,20 +7,20 @@
     android:orientation="vertical"
     tools:context="com.example.schooner.edtechadvisor.Category">
 
-    <RelativeLayout
-        xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:tools="http://schemas.android.com/tools"
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/my_toolbar"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
-        >
-       </RelativeLayout>
+        android:layout_height="?attr/actionBarSize"
+        android:background="?attr/colorPrimary"
+        android:elevation="4dp"
+        android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"/>
 
-    <!--<include layout = "@layout/card_view_object">-->
-
-    <!--</include>-->
     <android.support.v7.widget.RecyclerView
         android:layout_height="match_parent"
         android:layout_width="match_parent"
-        android:id="@+id/recycler_view" />
+        android:id="@+id/recycler_view"
+        android:paddingTop="50dp"
+        ></android.support.v7.widget.RecyclerView>
+
 </RelativeLayout>
