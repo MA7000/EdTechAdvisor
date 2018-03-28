@@ -24,6 +24,8 @@ public class Category extends AppCompatActivity {
     private List<Object> tools;
     private ObjectsAdapter objectsAdapter;
     private Toolbar myToolbar;
+    RecyclerView recyclerView;
+    Object newTool;
 
 
     @Override
@@ -69,34 +71,57 @@ return super.onCreateOptionsMenu(menu);
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
-            case R.id.save:
-                Toast.makeText(this, "Saved", Toast.LENGTH_SHORT).show();
-                return true;
-            case R.id.share:
-                Toast.makeText(this, "Share it baby", Toast.LENGTH_SHORT).show();
-                return true;
-            case R.id.star:
+//            case R.id.save:
+//                Toast.makeText(this, "Saved", Toast.LENGTH_SHORT).show();
+//                return true;
+//            case R.id.share:
+//                Toast.makeText(this, "Share it baby", Toast.LENGTH_SHORT).show();
+//                return true;
+            case R.id.star2:
                 Toast.makeText(this, "Added to My Library", Toast.LENGTH_SHORT).show();
                 return true;
-            case R.id.add:
-                tools.add(addRandomObject());
-                objectsAdapter.notifyDataSetChanged();
+//            case R.id.addRandom:
+////                Toast.makeText(this, "Test", Toast.LENGTH_SHORT).show();
+////                return true;
+//                tools.add(addRandomObject());
+//                objectsAdapter.notifyDataSetChanged();
             default:
                 return super.onOptionsItemSelected(item);
         }
-
     }
 
-    private Object addRandomObject() {
-        int num = (int) (Math.random() * 3);
+//
+//    }
+//    private Object addRandomObject() {
+//        int num = (int) (Math.random() * 3);
+//        if (num == 0)
+//            return new Object("Class Dojo", "Classroom Management App", R.drawable.classdojo);
+//        else if (num == 1)
+//            return new Object("Socrative", "Formative Assessment Tool", R.drawable.socrative);
+//        else
+//            return new Object("Kahoot", "Formative Assessment Tool", R.drawable.kahoot);
+//    }
+
+
+    public void addRandomObject (MenuItem item) {
+//        Toast.makeText(this, "Test", Toast.LENGTH_SHORT).show();
+//    }
+        int num = (int) (Math.random()*3);
         if (num == 0)
-            return new Object("Class Dojo", "Classroom Management App", R.drawable.classdojo);
+            newTool = new Object ("Class Dojo", "Classroom Management App", R.drawable.classdojo);
         else if (num == 1)
-            return new Object("Socrative", "Formative Assessment Tool", R.drawable.socrative);
+            newTool = new Object ("Socrative", "Formative Assessment Tool", R.drawable.socrative);
         else
-            return new Object("Kahoot", "Formative Assessment Tool", R.drawable.kahoot);
+            newTool = new Object ("Kahoot", "Formative Assessment Tool", R.drawable.kahoot);
+        tools.add(newTool);
+        objectsAdapter.notifyDataSetChanged();
+//        recyclerView.setAdapter(objectsAdapter);
     }
 
+//    public void addRandomObject(View view) {
+//        tools.add (addRandomObject());
+//        objectsAdapter.notifyDataSetChanged();
+//    }
 
     public void signup(MenuItem item) {
         Toast.makeText(this, "SIGN ME UP NOW!", Toast.LENGTH_SHORT).show();
