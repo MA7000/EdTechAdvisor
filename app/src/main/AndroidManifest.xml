@@ -21,12 +21,18 @@
             android:label="ToolBar Test"
             android:parentActivityName=".MainActivity" />
         />
-        <activity android:name=".SuggestActivity" />
-        <activity android:name =".Category"
-            android:label = "Category"
-            android:parentActivityName=".MainActivity">
-
-        </activity>
+        <activity
+            android:name=".SuggestActivity"
+            android:label="Suggest"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".Category"
+            android:label="Category"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".Tutorials"
+            android:label="@string/title_activity_tutorials"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
 </manifest>

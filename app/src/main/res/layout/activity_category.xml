@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -8,11 +8,37 @@
     tools:context="com.example.schooner.edtechadvisor.Category">
 
 
-    <android.support.v7.widget.RecyclerView
-        android:layout_height="match_parent"
-        android:layout_width="match_parent"
-        android:id="@+id/recycler_view"
-        android:padding = "20dp"
-        ></android.support.v7.widget.RecyclerView>
+    <!--<android.support.v7.widget.RecyclerView-->
+        <!--android:layout_height="match_parent"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:id="@+id/recycler_view"-->
+        <!--android:padding = "20dp"-->
+        <!--&gt;</android.support.v7.widget.RecyclerView>-->
 
-</RelativeLayout>
+        <Button
+            android:layout_width = "match_parent"
+            android:layout_height="0dp"
+            android:text="Administrative Tools"
+            android:layout_margin = "4dp"
+            android:id="@+id/admintools"
+            android:background = "#86bbda"
+            android:textColor = "#ffffff"
+            android:layout_weight = "1"
+            android:textSize = "25dp"
+            android:onClick = "goToClassDojo"
+
+            />
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:text="Content-Based Tools"
+            android:id="@+id/content_tools"
+            android:layout_margin = "4dp"
+            android:background= "#ee4b6a"
+            android:textColor = "#ffffff"
+            android:layout_weight = "1"
+            android:textSize = "25dp"
+            />
+
+</LinearLayout>

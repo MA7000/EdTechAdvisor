@@ -3,9 +3,14 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <item
+        android:title = "Search"
+        android:id="@+id/search"
+        android:icon = "@android:drawable/ic_menu_search"
+        app:showAsAction="always"/>
+    <item
         android:title="Add to My Library"
         android:icon="@android:drawable/btn_star"
-        app:showAsAction = "always"
+        app:showAsAction = "never"
         android:id="@+id/star"
         />
 
@@ -13,15 +18,15 @@
         android:id="@+id/share"
         android:icon="@android:drawable/ic_menu_share"
         android:title="Share"
-        app:showAsAction="always"
-        />
-
-    <item
-        android:id="@+id/save"
-        android:icon="@android:drawable/ic_menu_save"
-        android:title="Save"
         app:showAsAction="never"
         />
+
+    <!--<item-->
+        <!--android:id="@+id/save"-->
+        <!--android:icon="@android:drawable/ic_menu_save"-->
+        <!--android:title="Save"-->
+        <!--app:showAsAction="never"-->
+        <!--/>-->
 
     <item
         android:id="@+id/signup"
@@ -35,8 +40,17 @@
         android:id="@+id/viewLibrary"
         android:title = "Library of Tools"
         android:icon="@android:drawable/ic_menu_gallery"
-        app:showAsAction="always"
+        app:showAsAction="never"
         android:onClick = "viewLibrary"></item>
+
+    <item
+        android:id="@+id/viewTutorial"
+        android:title = "Tutorials"
+        android:icon="@android:drawable/gallery_thumb"
+        app:showAsAction="never"
+        android:onClick = "viewTutorial"></item>
+
+
 
 
 

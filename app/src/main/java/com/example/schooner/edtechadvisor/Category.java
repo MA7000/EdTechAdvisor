@@ -34,21 +34,23 @@ public class Category extends AppCompatActivity {
         setContentView(R.layout.activity_category);
 
 
-        initialData();
+//        initialData();
+//
+//        RecyclerView recyclerView = (RecyclerView) findViewById(R.id.recycler_view);
+//        recyclerView.setHasFixedSize(true);
+//        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+//        objectsAdapter = new ObjectsAdapter(tools, this);
+//        recyclerView.setAdapter(objectsAdapter);
 
-        RecyclerView recyclerView = (RecyclerView) findViewById(R.id.recycler_view);
-        recyclerView.setHasFixedSize(true);
-        recyclerView.setLayoutManager(new LinearLayoutManager(this));
-        objectsAdapter = new ObjectsAdapter(tools, this);
-        recyclerView.setAdapter(objectsAdapter);
-
-     //  Toolbar myToolbar = (Toolbar) findViewById(R.id.my_toolbar);
-       //myToolbar.setSubtitle("Test");
+        //  Toolbar myToolbar = (Toolbar) findViewById(R.id.my_toolbar);
+        //myToolbar.setSubtitle("Test");
         //myToolbar.inflateMenu(R.menu.sub_menu);
 /*         setSupportActionBar(myToolbar);
         myToolbar.inflateMenu(R.menu.sub_menu);*/
 
     }
+
+
 
     private void initialData() {
         tools = new ArrayList<>();
@@ -57,17 +59,18 @@ public class Category extends AppCompatActivity {
         tools.add(new Object("Kahoot", "Formative Assessment Tool", R.drawable.kahoot2));
     }
 
-//    @Override
+    //    @Override
 //    public boolean onCreateOptionsMenu(Menu menu) {
 //        getMenuInflater().inflate(R.menu.main_menu, menu);
 //        return true;
 //    }
-@Override
-public boolean onCreateOptionsMenu(Menu menu) {
-getMenuInflater().inflate(R.menu.sub_menu, menu);
-return super.onCreateOptionsMenu(menu);
-}
-//
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.sub_menu, menu);
+        return super.onCreateOptionsMenu(menu);
+    }
+
+    //
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
@@ -103,16 +106,16 @@ return super.onCreateOptionsMenu(menu);
 //    }
 
 
-    public void addRandomObject (MenuItem item) {
+    public void addRandomObject(MenuItem item) {
 //        Toast.makeText(this, "Test", Toast.LENGTH_SHORT).show();
 //    }
-        int num = (int) (Math.random()*3);
+        int num = (int) (Math.random() * 3);
         if (num == 0)
-            newTool = new Object ("Class Dojo", "Classroom Management App", R.drawable.classdojo);
+            newTool = new Object("Class Dojo", "Classroom Management App", R.drawable.classdojo);
         else if (num == 1)
-            newTool = new Object ("Socrative", "Formative Assessment Tool", R.drawable.socrative);
+            newTool = new Object("Socrative", "Formative Assessment Tool", R.drawable.socrative);
         else
-            newTool = new Object ("Kahoot", "Formative Assessment Tool", R.drawable.kahoot);
+            newTool = new Object("Kahoot", "Formative Assessment Tool", R.drawable.kahoot);
         tools.add(newTool);
         objectsAdapter.notifyDataSetChanged();
 //        recyclerView.setAdapter(objectsAdapter);
@@ -128,6 +131,7 @@ return super.onCreateOptionsMenu(menu);
         Intent intent = new Intent(this, Tutorial.class);
         startActivity(intent);
     }
+
 }
 
 
