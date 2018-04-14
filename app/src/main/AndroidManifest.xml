@@ -33,6 +33,14 @@
             android:name=".Tutorials"
             android:label="@string/title_activity_tutorials"
             android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity android:name=".AdminTools"
+            android:label = "Adminsitrative Tools"
+            android:theme = "@style/AppTheme"
+            android:parentActivityName=".Category"></activity>
+        <activity android:name=".ContentTools"
+            android:label = "Content-Based Tools"
+            android:theme = "@style/AppTheme"
+            android:parentActivityName=".Category"></activity>
     </application>
 
 </manifest>

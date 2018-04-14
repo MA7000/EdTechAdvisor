@@ -20,6 +20,7 @@ public class ObjectViewHolder extends RecyclerView.ViewHolder {
         public ImageView toolPhoto;
 
 
+
         public ObjectViewHolder (View itemView, final Context context) {
             super (itemView);
             cardView = (CardView) itemView.findViewById(R.id.card_view);
@@ -31,6 +32,7 @@ public class ObjectViewHolder extends RecyclerView.ViewHolder {
                 @Override
                 public void onClick (View v){
                     Toast.makeText(context, toolName.getText(),Toast.LENGTH_SHORT).show();
+
                 }
             } );
 

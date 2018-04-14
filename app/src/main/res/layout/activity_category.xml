@@ -25,7 +25,7 @@
             android:textColor = "#ffffff"
             android:layout_weight = "1"
             android:textSize = "25dp"
-            android:onClick = "goToClassDojo"
+            android:onClick = "goToAdminTools"
 
             />
 
@@ -39,6 +39,7 @@
             android:textColor = "#ffffff"
             android:layout_weight = "1"
             android:textSize = "25dp"
+            android:onClick = "goToContentTools"
             />
 
 </LinearLayout>

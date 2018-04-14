@@ -25,7 +25,7 @@ public class ObjectsAdapter  extends RecyclerView.Adapter <ObjectViewHolder> {
     @Override
     public ObjectViewHolder onCreateViewHolder(ViewGroup parent,int viewType){
             View view=LayoutInflater.from(parent.getContext()).inflate(R.layout.card_view_object,parent,false);
-            return new ObjectViewHolder(view,context);
+            return new ObjectViewHolder(view, context);
 
             }
 

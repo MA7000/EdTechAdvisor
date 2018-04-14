@@ -51,7 +51,6 @@ public class Category extends AppCompatActivity {
     }
 
 
-
     private void initialData() {
         tools = new ArrayList<>();
         tools.add(new Object("Class Dojo", "Classroom Management App", R.drawable.classdojo2));
@@ -93,6 +92,16 @@ public class Category extends AppCompatActivity {
         }
     }
 
+    public void goToAdminTools(View view) {
+        Intent goToAdminTools = new Intent(this, AdminTools.class);
+        startActivity(goToAdminTools);
+    }
+
+    public void goToContentTools (View view) {
+        Intent goToContentTools= new Intent(this, ContentTools.class);
+        startActivity(goToContentTools);
+    }
+
 //
 //    }
 //    private Object addRandomObject() {
@@ -132,6 +141,11 @@ public class Category extends AppCompatActivity {
         startActivity(intent);
     }
 
+    public void goToTutorial(View view) {
+        Toast.makeText(this, "What has worked for you?", Toast.LENGTH_SHORT).show();
+        Intent goToTutorial = new Intent(this, Tutorials.class);
+        startActivity(goToTutorial);
+    }
 }
 
 
