@@ -60,9 +60,9 @@ public class MainActivity extends AppCompatActivity {
             case R.id.share:
                 Toast.makeText(this, "Share it baby", Toast.LENGTH_SHORT).show();
                 return true;
-            case R.id.star:
-                Toast.makeText(this, "Added to My Library", Toast.LENGTH_SHORT).show();
-                return true;
+//            case R.id.star:
+//                Toast.makeText(this, "Added to My Library", Toast.LENGTH_SHORT).show();
+//                return true;
 
             //                tools.add(getRandomObject());
 //                objectsAdapter.notifyDataSetChanged();
@@ -88,7 +88,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void signup(MenuItem item) {
         Toast.makeText(this, "SIGN ME UP NOW!", Toast.LENGTH_SHORT).show();
-        Intent intent = new Intent(this, Tutorial.class);
+        Intent intent = new Intent(this, SignUp.class);
         startActivity(intent);
 //    }
 

@@ -41,6 +41,14 @@
             android:label = "Content-Based Tools"
             android:theme = "@style/AppTheme"
             android:parentActivityName=".Category"></activity>
+        <activity android:name=".ClassDojo"
+            android:label = "Class Dojo"
+            android:theme = "@style/AppTheme"
+            android:parentActivityName=".ContentTools"></activity>
+        <activity android:name=".SignUp"
+            android:theme = "@style/AppTheme"
+            android:parentActivityName=".MainActivity"></activity>
+
     </application>
 
 </manifest>

@@ -8,49 +8,93 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight ="8dp">
 
-            <ImageView
+            <RelativeLayout
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:drawable = "@drawable/clinton"/>
+                android:layout_height="wrap_content">
 
-            <RatingBar
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"/>
+                <ImageView
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:src = "@drawable/classdojo2"
+                    android:layout_alignParentLeft="true"
+                    android:id = "@+id/classdojo">
+
+                </ImageView>
+
+                <RatingBar
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_toRightOf="@id/classdojo"
+                    android:id="@+id/MyRating"
+                    android:paddingTop = "20dp"/>
+
+
+            </RelativeLayout>
+
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="@string/hint_name"
-                android:layout_margin="16dp" />
+                />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="ClassDojo"
+                android:textColor="#000000"
+                 android:layout_marginBottom = "10dp"
+                />
+
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="@string/hint_name2"
-                android:layout_margin="16dp"/>
+                />
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="@string/hint_name3"
-                android:layout_margin="16dp"/>
+                android:text="@string/filler2"
+                android:textColor="#000000"
+                android:layout_marginBottom="10dp"
+                />
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="@string/hint_name4"
-                android:layout_margin="16dp"/>
+                android:text="@string/hint_name3"
+                />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/filler2"
+                android:textColor="#000000"
+                android:layout_marginBottom="10dp"
+                />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/hint_name4" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/filler2"
+                android:textColor="#000000"
+                android:layout_marginBottom="10dp"
+                />
             <CheckBox
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="@string/checkbox1"
-                android:layout_margin="16dp"/>
+                android:hint="@string/checkbox1" />
             <CheckBox
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="@string/checkbox2"
-                android:layout_margin="16dp"/>
+                />
 
             <Button
                 android:layout_width="match_parent"

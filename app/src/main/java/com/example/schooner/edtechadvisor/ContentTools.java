@@ -48,4 +48,21 @@ public class ContentTools extends AppCompatActivity {
         tools.add(new Object("Kahoot", "Formative Assessment Tool", R.drawable.kahoot2));
     }
 
+ /*   public boolean onCreateOptionsMenu (Menu menu) {
+        getMenuInflater().inflate(R.menu.main_menu, menu);
+        return super.onCreateOptionsMenu(menu);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.share:
+                Toast.makeText(this, "Share it baby", Toast.LENGTH_SHORT).show();
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
+
+    }*/
+
 }

@@ -7,12 +7,20 @@
         android:id="@+id/search"
         android:icon = "@android:drawable/ic_menu_search"
         app:showAsAction="always"/>
+
     <item
-        android:title="Add to My Library"
-        android:icon="@android:drawable/btn_star"
-        app:showAsAction = "never"
-        android:id="@+id/star"
-        />
+        android:id="@+id/signup"
+        android:icon="@android:drawable/ic_menu_save"
+        android:title="Sign Up"
+        app:showAsAction="never"
+        android:onClick="signup"></item>
+
+    <!--<item-->
+        <!--android:title="Add to My Library"-->
+        <!--android:icon="@android:drawable/btn_star"-->
+        <!--app:showAsAction = "never"-->
+        <!--android:id="@+id/star"-->
+        <!--/>-->
 
     <item
         android:id="@+id/share"
@@ -28,27 +36,22 @@
         <!--app:showAsAction="never"-->
         <!--/>-->
 
-    <item
-        android:id="@+id/signup"
-        android:icon="@android:drawable/ic_menu_save"
-        android:title="Sign Up"
-        app:showAsAction="never"
-        android:onClick="signup"></item>
 
 
-    <item
-        android:id="@+id/viewLibrary"
-        android:title = "Library of Tools"
-        android:icon="@android:drawable/ic_menu_gallery"
-        app:showAsAction="never"
-        android:onClick = "viewLibrary"></item>
 
-    <item
-        android:id="@+id/viewTutorial"
-        android:title = "Tutorials"
-        android:icon="@android:drawable/gallery_thumb"
-        app:showAsAction="never"
-        android:onClick = "viewTutorial"></item>
+    <!--<item-->
+        <!--android:id="@+id/viewLibrary"-->
+        <!--android:title = "Library of Tools"-->
+        <!--android:icon="@android:drawable/ic_menu_gallery"-->
+        <!--app:showAsAction="never"-->
+        <!--android:onClick = "viewLibrary"></item>-->
+
+    <!--<item-->
+        <!--android:id="@+id/viewTutorial"-->
+        <!--android:title = "Tutorials"-->
+        <!--android:icon="@android:drawable/gallery_thumb"-->
+        <!--app:showAsAction="never"-->
+        <!--android:onClick = "viewTutorial"></item>-->
 
 
 
