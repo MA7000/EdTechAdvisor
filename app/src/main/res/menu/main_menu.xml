@@ -11,7 +11,7 @@
     <item
         android:id="@+id/signup"
         android:icon="@android:drawable/ic_menu_save"
-        android:title="Sign Up"
+        android:title="Log In"
         app:showAsAction="never"
         android:onClick="signup"></item>
 
