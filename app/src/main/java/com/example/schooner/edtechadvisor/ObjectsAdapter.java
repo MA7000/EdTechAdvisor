@@ -10,6 +10,7 @@ import java.util.List;
 
 /**
  * Created by Schooner on 3/24/2018.
+ * connects object class to name, info, & photo for recycler view*
  */
 
 public class ObjectsAdapter  extends RecyclerView.Adapter <ObjectViewHolder> {

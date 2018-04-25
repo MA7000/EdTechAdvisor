@@ -29,6 +29,10 @@ public class ObjectViewHolder extends RecyclerView.ViewHolder {
             toolInfo = (TextView) itemView.findViewById(R.id.tool_info);
             toolPhoto= (ImageView) itemView.findViewById(R.id.object_logo);
 
+//            this takes the user from the recyclerview to the specific tool page. it should take the user to a template that
+//          autopopulates based on the tool clicked
+//            and the reviews associated with it//
+
             cardView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick (View v){

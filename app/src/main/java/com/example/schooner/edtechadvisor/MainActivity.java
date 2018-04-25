@@ -41,14 +41,14 @@ public class MainActivity extends AppCompatActivity {
         objectsAdapter = new ObjectsAdapter (tools, this);
         recyclerView.setAdapter(objectsAdapter);
     }
-
+//recyclerview stuff//
     private void initialData() {
         tools = new ArrayList<>();
         tools.add(new Object("Class Dojo", "Classroom Management App", R.drawable.classdojo2));
         tools.add(new Object("Socrative", "Formative Assessment Tool", R.drawable.socrative2));
         tools.add(new Object("Kahoot", "Formative Assessment Tool", R.drawable.kahoot2));
     }
-
+//below is menu stuff//
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.main_menu, menu);
         return super.onCreateOptionsMenu(menu);
@@ -60,12 +60,6 @@ public class MainActivity extends AppCompatActivity {
             case R.id.share:
                 Toast.makeText(this, "Share it baby", Toast.LENGTH_SHORT).show();
                 return true;
-//            case R.id.star:
-//                Toast.makeText(this, "Added to My Library", Toast.LENGTH_SHORT).show();
-//                return true;
-
-            //                tools.add(getRandomObject());
-//                objectsAdapter.notifyDataSetChanged();
             default:
                 return super.onOptionsItemSelected(item);
         }

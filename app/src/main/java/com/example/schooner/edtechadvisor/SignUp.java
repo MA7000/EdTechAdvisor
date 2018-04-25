@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 
 /**
  * Created by Schooner on 4/14/2018.
+ * needs to be connected to firebase
  */
 
 public class SignUp extends AppCompatActivity {

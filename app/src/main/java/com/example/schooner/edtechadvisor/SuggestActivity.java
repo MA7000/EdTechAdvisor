@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.widget.RatingBar;
 import android.widget.TextView;
 
+//This page should lead users to write reviews of objects/tools
 
 public class SuggestActivity extends AppCompatActivity {
 

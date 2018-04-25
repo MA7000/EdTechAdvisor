@@ -2,6 +2,7 @@ package com.example.schooner.edtechadvisor;
 
 /**
  * Created by Schooner on 3/24/2018.
+ * this is the tool object
  */
 
 public class Object {
