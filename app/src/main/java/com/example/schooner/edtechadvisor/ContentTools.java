@@ -16,22 +16,31 @@ import java.util.List;
 import android.app.ActionBar;
 import android.view.View;
 
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+
 /**
  * Created by Schooner on 4/14/2018.
  */
 
 public class ContentTools extends AppCompatActivity {
-    private List<Object> tools;
+    private List<Object> tools =  new ArrayList<>();
     private ObjectsAdapter objectsAdapter;
     RecyclerView recyclerView;
     Object newTool;
+
+    private FirebaseDatabase database;
+    private DatabaseReference myRef;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_content);
 
-        initialData();
+//        initialData();
 
         RecyclerView recyclerView = (RecyclerView) findViewById(R.id.recycler_view);
         recyclerView.setHasFixedSize(true);
@@ -39,14 +48,42 @@ public class ContentTools extends AppCompatActivity {
         objectsAdapter = new ObjectsAdapter (tools, this);
         recyclerView.setAdapter(objectsAdapter);
 
+        /**
+         * setting up the database to save the list of tools
+         */
+        database = FirebaseDatabase.getInstance();
+        DatabaseReference myRef = database.getReference("toolsTest");
+//        myRef.setValue(tools);
+
+        myRef.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                // This method is called once with the initial value and again whenever data at this location is updated.
+                for (DataSnapshot postSnapshot: dataSnapshot.getChildren()) {
+                    String tag = postSnapshot.child("tag").getValue(String.class);
+                    if (tag.equals("management")) {
+                        String name = postSnapshot.child("name").getValue(String.class);
+                        String info = postSnapshot.child("info").getValue(String.class);
+                        String objId = postSnapshot.child("objectId").getValue(Long.class).toString();
+                        tools.add(new Object(name, info, Integer.parseInt(objId), tag));
+                        System.out.println("Tool: " + name + " | Id: " + objId + " | Info: " + info + " | Tag: " + tag);
+                    }
+                }
+            }
+            @Override
+            public void onCancelled(DatabaseError error) {
+                Toast.makeText(ContentTools.this, "Error loading Firebase", Toast.LENGTH_SHORT).show();
+            }
+        });
+
     }
 
-    private void initialData() {
-        tools = new ArrayList<>();
-        tools.add(new Object("Class Dojo", "Classroom Management App", R.drawable.classdojo2));
-        tools.add(new Object("Socrative", "Formative Assessment Tool", R.drawable.socrative2));
-        tools.add(new Object("Kahoot", "Formative Assessment Tool", R.drawable.kahoot2));
-    }
+//    private void initialData() {
+//        tools = new ArrayList<>();
+//        tools.add(new Object("Class Dojo", "Classroom Management App", R.drawable.classdojo2));
+//        tools.add(new Object("Socrative", "Formative Assessment Tool", R.drawable.socrative2));
+//        tools.add(new Object("Kahoot", "Formative Assessment Tool", R.drawable.kahoot2));
+//    }
 
  /*   public boolean onCreateOptionsMenu (Menu menu) {
         getMenuInflater().inflate(R.menu.main_menu, menu);

@@ -61,7 +61,12 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 // This method is called once with the initial value and again whenever data at this location is updated.
-                String loadedData = dataSnapshot.getValue(String.class);
+                for (DataSnapshot postSnapshot: dataSnapshot.getChildren()) {
+                    String name = postSnapshot.child("name").getValue(String.class);
+                    String info = postSnapshot.child("info").getValue(String.class);
+                    String objId = postSnapshot.child("objectId").getValue(Long.class).toString();
+                    System.out.println("Tool: " + name + " | Id: " + objId + " | Info: " + info);
+                }
             }
             @Override
             public void onCancelled(DatabaseError error) {
@@ -72,9 +77,11 @@ public class MainActivity extends AppCompatActivity {
     }
 //recyclerview stuff//
     private void initialData() {
-        tools.add(new Object("Class Dojo", "Classroom Management App", R.drawable.classdojo2));
-        tools.add(new Object("Socrative", "Formative Assessment Tool", R.drawable.socrative2));
-        tools.add(new Object("Kahoot", "Formative Assessment Tool", R.drawable.kahoot2));
+        tools.add(new Object("Class Dojo", "Classroom Management App", R.drawable.classdojo2, "management"));
+        tools.add(new Object("Socrative", "Formative Assessment Tool", R.drawable.socrative2, "formative"));
+        tools.add(new Object("Kahoot", "Formative Assessment Tool", R.drawable.kahoot2, "formative"));
+        tools.add(new Object("Test Tool", "Classroom Management Tool", R.drawable.kahoot2, "management"));
+
     }
 //below is menu stuff//
     public boolean onCreateOptionsMenu(Menu menu) {
