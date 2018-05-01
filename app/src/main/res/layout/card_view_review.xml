@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id = "@+id/card_view_review"
+    android:layout_margin = "8dp"
+    >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin = "16dp"
+        android:orientation="vertical"
+       android:id = "@+id/reviewcard">
+        >
+
+        <TextView
+            android:id="@+id/userName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="User:" />
+        <TextView
+            android:id="@+id/userNameResponse"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Harry Potter"
+            android:layout_marginLeft="20dp"
+            android:textColor="@color/colorPrimary"/>
+        <TextView
+            android:id="@+id/lesson"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="How was the tool used in the lesson?" />
+
+            <TextView
+                android:id="@+id/answer1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="sample user answer 1"
+                android:layout_marginLeft="20dp"
+                android:textColor="@color/colorPrimary"/>
+        <TextView
+            android:id="@+id/drive"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="How does the tool drive student learning?" />
+        <TextView
+            android:id="@+id/answer2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="sample user answer 2"
+            android:layout_marginLeft="20dp"
+            android:textColor="@color/colorPrimary"/>
+        <TextView
+            android:id="@+id/othercomments"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Any other comments?" />
+        <TextView
+            android:id="@+id/answer3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="sample user answer 3"
+            android:layout_marginLeft="20dp"
+            android:textColor="@color/colorPrimary"/>
+        <TextView
+            android:id="@+id/easiness"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Easiness:" />
+        <TextView
+            android:id="@+id/answer4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="sample user answer 4"
+            android:layout_marginLeft="20dp"
+            android:textColor="@color/colorPrimary"/>
+        <TextView
+            android:id="@+id/userFriendliness"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="User Friendliness:" />
+        <TextView
+            android:id="@+id/answer5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="sample user answer 5"
+            android:layout_marginLeft="20dp"
+            android:textColor="@color/colorPrimary"/>
+        <TextView
+            android:id="@+id/overall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Overall:" />
+        <TextView
+            android:id="@+id/answer6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="sample user answer 6"
+            android:layout_marginLeft="20dp"
+            android:textColor="@color/colorPrimary"/>
+
+        <TextView
+            android:id="@+id/reuse"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Would you reuse the tool?"></TextView>
+        <TextView
+            android:id="@+id/answer7"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="sample user answer 7"
+            android:layout_marginLeft="20dp"
+            android:textColor="@color/colorPrimary"/>
+    </LinearLayout>
+
+
+
+</android.support.v7.widget.CardView>
