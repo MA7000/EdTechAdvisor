@@ -37,7 +37,7 @@ public class ObjectViewHolder extends RecyclerView.ViewHolder {
                 @Override
                 public void onClick (View v){
                     Toast.makeText(context, toolName.getText(),Toast.LENGTH_SHORT).show();
-                    Intent intent = new Intent (context, ClassDojo.class);
+                    Intent intent = new Intent (context, SampleTool.class);
                     context.startActivity(intent);
 
 

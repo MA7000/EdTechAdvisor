@@ -48,6 +48,9 @@
         <activity android:name=".SignUp"
             android:theme = "@style/AppTheme"
             android:parentActivityName=".MainActivity"></activity>
+        <activity android:name=".SampleTool"
+            android:theme = "@style/AppTheme"
+            android:parentActivityName=".Category"></activity>
 
     </application>
 

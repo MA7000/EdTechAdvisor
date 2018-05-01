@@ -11,17 +11,17 @@
      android:layout_height="match_parent"
      android:orientation="vertical">
 
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="@string/hint_name"
-        android:layout_margin="16dp"/>
+    <!--<EditText-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:hint="@string/hint_name"-->
+        <!--android:layout_margin="16dp"/>-->
 
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="@string/hint_name2"
-        android:layout_margin="16dp"/>
+    <!--<EditText-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:hint="@string/hint_name2"-->
+        <!--android:layout_margin="16dp"/>-->
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -34,37 +34,43 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Introduce content"
-        android:layout_margin="4dp"/>
+        android:layout_margin="4dp"
+        android:id="@+id/introducecontent"/>
     <CheckBox
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Practice and reinforce content"
-        android:layout_margin="4dp"/>
+        android:layout_margin="4dp"
+        android:id="@+id/practicecontent"/>
     <CheckBox
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Review content"
-        android:layout_margin="4dp"/>
+        android:layout_margin="4dp"
+        android:id="@+id/reviewcontent"/>
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="@string/hint_name3"
-        android:layout_margin="16dp"/>
+        android:layout_margin="16dp"
+        android:id="@+id/studentDriven"/>
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="@string/hint_name4"
-        android:layout_margin="16dp"/>
-    <CheckBox
+        android:layout_margin="16dp"
+        android:id="@+id/othercomments"/>
+   <!-- <CheckBox
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="@string/checkbox1"
-        android:layout_margin="16dp"/>
+        android:layout_margin="16dp"/>-->
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Easiness"
-        android:layout_margin="16dp"/>
+        android:layout_margin="16dp"
+        />
     <RatingBar
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -99,7 +105,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Yes"
-        android:layout_margin="4dp"/>
+        android:layout_margin="4dp"
+        android:id="@+id/repeatTest"/>
 
     <Button
         android:layout_width="match_parent"
