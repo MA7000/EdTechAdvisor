@@ -11,13 +11,14 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/tutorial"
-        android:textSize="24dp"/>
+        android:textSize="24dp"
+        android:layout_marginBottom="8dp"/>
+
     <Button
         android:layout_width="400dp"
         android:layout_height="200dp"
-        android:text = "PLACEHOLDER"
-        android:layout_margin = "16dp"
-        />
+        android:text="PLACEHOLDER"
+        android:layout_gravity="center"/>
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

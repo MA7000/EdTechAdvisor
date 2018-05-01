@@ -15,15 +15,24 @@ import android.app.ActionBar;
 import android.view.View;
 
 
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+
 import java.util.ArrayList;
 import java.util.List;
+import java.util.UUID;
 
 public class MainActivity extends AppCompatActivity {
-    private List<Object> tools;
+    private List<Object> tools= new ArrayList<>();;
     private ObjectsAdapter objectsAdapter;
     RecyclerView recyclerView;
     Object newTool;
 
+    private FirebaseDatabase database;
+    private DatabaseReference myRef;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,10 +49,29 @@ public class MainActivity extends AppCompatActivity {
 //        recyclerView.setLayoutManager(new LinearLayoutManager(this));
         objectsAdapter = new ObjectsAdapter (tools, this);
         recyclerView.setAdapter(objectsAdapter);
+
+/**
+ * setting up the database to save the list of tools
+ */
+        database = FirebaseDatabase.getInstance();
+        DatabaseReference myRef = database.getReference("toolsTest");
+        myRef.setValue(tools);
+
+        myRef.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                // This method is called once with the initial value and again whenever data at this location is updated.
+                String loadedData = dataSnapshot.getValue(String.class);
+            }
+            @Override
+            public void onCancelled(DatabaseError error) {
+                Toast.makeText(MainActivity.this, "Error loading Firebase", Toast.LENGTH_SHORT).show();
+            }
+        });
+
     }
 //recyclerview stuff//
     private void initialData() {
-        tools = new ArrayList<>();
         tools.add(new Object("Class Dojo", "Classroom Management App", R.drawable.classdojo2));
         tools.add(new Object("Socrative", "Formative Assessment Tool", R.drawable.socrative2));
         tools.add(new Object("Kahoot", "Formative Assessment Tool", R.drawable.kahoot2));
