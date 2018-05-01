@@ -123,6 +123,11 @@ public class MainActivity extends AppCompatActivity {
 
 
     }
+    public void login (MenuItem item) {
+        Toast.makeText(this, "LOG ME IN!", Toast.LENGTH_SHORT).show();
+        Intent goToLogin = new Intent(this, LoginActivity.class);
+        startActivity(goToLogin);
+    }
 
     public void goToLibrary (View view) {
         Toast.makeText(this, "Check out the Library.", Toast.LENGTH_SHORT).show();
