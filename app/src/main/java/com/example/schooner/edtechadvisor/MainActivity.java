@@ -91,16 +91,15 @@ public class MainActivity extends AppCompatActivity {
             public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
                 FirebaseUser user = msAuth.getCurrentUser();
                 if (user == null){
-                    startActivity(new Intent(MainActivity.this, LoginActivity.class));
+                    System.out.println("HELLO. This user is not in the database");
                 } else {
                     System.out.println("HELLO. This user is in the database");
                     userReference = database.getReference(user.getUid());
                 }
             };
         };
-
-
     }
+
 //recyclerview stuff//
     private void initialData() {
         tools.add(new Object("Class Dojo", "Classroom Management App", R.drawable.classdojo2, "management"));
@@ -108,10 +107,19 @@ public class MainActivity extends AppCompatActivity {
         tools.add(new Object("Kahoot", "Formative Assessment Tool", R.drawable.kahoot2, "formative"));
         tools.add(new Object("Test Tool", "Classroom Management Tool", R.drawable.kahoot2, "management"));
     }
+
 //below is menu stuff//
-    public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.main_menu, menu);
-        return super.onCreateOptionsMenu(menu);
+    public boolean onPrepareOptionsMenu(Menu menu) {
+        FirebaseUser user = msAuth.getCurrentUser();
+        if (user == null){
+            invalidateOptionsMenu();
+            getMenuInflater().inflate(R.menu.main_menu, menu);
+            return super.onCreateOptionsMenu(menu);
+        } else {
+            invalidateOptionsMenu();
+            getMenuInflater().inflate(R.menu.logged_in_menu, menu);
+            return super.onCreateOptionsMenu(menu);
+        }
     }
 
     @Override
@@ -123,9 +131,7 @@ public class MainActivity extends AppCompatActivity {
             default:
                 return super.onOptionsItemSelected(item);
         }
-
     }
-
 
     public void viewLibrary(MenuItem item) {
         Toast.makeText(this, "Check out the Library.", Toast.LENGTH_SHORT).show();
@@ -139,7 +145,6 @@ public class MainActivity extends AppCompatActivity {
         startActivity(goToTutorial);
     }
 
-
     public void signup(MenuItem item) {
         Toast.makeText(this, "SIGN ME UP NOW!", Toast.LENGTH_SHORT).show();
         Intent intent = new Intent(this, SignUp.class);
@@ -149,6 +154,11 @@ public class MainActivity extends AppCompatActivity {
         Toast.makeText(this, "LOG ME IN!", Toast.LENGTH_SHORT).show();
         Intent goToLogin = new Intent(this, LoginActivity.class);
         startActivity(goToLogin);
+    }
+
+    public void logout (MenuItem item) {
+        Toast.makeText(this, "YOU ARE NOW LOGGED OUT", Toast.LENGTH_SHORT).show();
+        msAuth.signOut();
     }
 
     public void goToLibrary (View view) {

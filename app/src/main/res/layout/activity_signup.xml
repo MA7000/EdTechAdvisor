@@ -20,7 +20,7 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="8dp"
         android:layout_marginRight="8dp"
-        android:hint="School Affliated Email Address"
+        android:hint="School Affiliated Email Address"
         android:id="@+id/edit_text_email"/>
 
     <EditText
