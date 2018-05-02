@@ -20,16 +20,8 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="8dp"
         android:layout_marginRight="8dp"
-        android:hint="Name"
-        android:textColor="#ffffff" />
-
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="8dp"
-        android:layout_marginRight="8dp"
         android:hint="School Affliated Email Address"
-        android:textColor="#ffffff" />
+        android:id="@+id/edit_text_email"/>
 
     <EditText
         android:layout_width="match_parent"
@@ -37,7 +29,7 @@
         android:layout_marginLeft="8dp"
         android:layout_marginRight="8dp"
         android:hint="Password"
-        android:textColor="#ffffff" />
+        android:id="@+id/edit_text_password"/>
 
     <Button
         android:layout_width="match_parent"
@@ -49,7 +41,9 @@
         android:background="@color/colorAccent"
         android:text="Sign Up"
         android:textColor="#ffffff"
-        android:textSize="15dp" />
+        android:textSize="15dp"
+        android:onClick="signUp"
+        />
 
     <Button
         android:layout_width="match_parent"
@@ -62,7 +56,8 @@
         android:text="Have an account? Log In"
         android:textColor="#ffffff"
         android:textSize="15dp"
-        android:onClick="goToLogin"/>
+        android:onClick="goToLogin"
+        />
 
 
 </LinearLayout>

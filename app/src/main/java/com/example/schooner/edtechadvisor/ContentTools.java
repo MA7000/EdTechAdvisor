@@ -52,7 +52,7 @@ public class ContentTools extends AppCompatActivity {
          * setting up the database to save the list of tools
          */
         database = FirebaseDatabase.getInstance();
-        DatabaseReference myRef = database.getReference("toolsTest");
+        DatabaseReference myRef = database.getReference("tools");
 //        myRef.setValue(tools);
 
         myRef.addValueEventListener(new ValueEventListener() {

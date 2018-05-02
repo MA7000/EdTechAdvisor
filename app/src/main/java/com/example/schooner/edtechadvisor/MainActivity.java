@@ -2,6 +2,7 @@ package com.example.schooner.edtechadvisor;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -15,6 +16,8 @@ import android.app.ActionBar;
 import android.view.View;
 
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -33,6 +36,11 @@ public class MainActivity extends AppCompatActivity {
 
     private FirebaseDatabase database;
     private DatabaseReference myRef;
+
+//    member variables for authentication
+    private FirebaseAuth msAuth;
+    private FirebaseAuth.AuthStateListener authListener;
+    private DatabaseReference userReference;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,7 +62,7 @@ public class MainActivity extends AppCompatActivity {
  * setting up the database to save the list of tools
  */
         database = FirebaseDatabase.getInstance();
-        DatabaseReference myRef = database.getReference("toolsTest");
+        DatabaseReference myRef = database.getReference("tools");
         myRef.setValue(tools);
 
         myRef.addValueEventListener(new ValueEventListener() {
@@ -74,6 +82,24 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+//        setting up authentication
+        msAuth = FirebaseAuth.getInstance();
+        userReference = database.getReference("HardCodedUser");
+
+        authListener =  new FirebaseAuth.AuthStateListener() {
+            @Override
+            public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
+                FirebaseUser user = msAuth.getCurrentUser();
+                if (user == null){
+                    startActivity(new Intent(MainActivity.this, LoginActivity.class));
+                } else {
+                    System.out.println("HELLO. This user is in the database");
+                    userReference = database.getReference(user.getUid());
+                }
+            };
+        };
+
+
     }
 //recyclerview stuff//
     private void initialData() {
@@ -81,7 +107,6 @@ public class MainActivity extends AppCompatActivity {
         tools.add(new Object("Socrative", "Formative Assessment Tool", R.drawable.socrative2, "formative"));
         tools.add(new Object("Kahoot", "Formative Assessment Tool", R.drawable.kahoot2, "formative"));
         tools.add(new Object("Test Tool", "Classroom Management Tool", R.drawable.kahoot2, "management"));
-
     }
 //below is menu stuff//
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -119,9 +144,6 @@ public class MainActivity extends AppCompatActivity {
         Toast.makeText(this, "SIGN ME UP NOW!", Toast.LENGTH_SHORT).show();
         Intent intent = new Intent(this, SignUp.class);
         startActivity(intent);
-//    }
-
-
     }
     public void login (MenuItem item) {
         Toast.makeText(this, "LOG ME IN!", Toast.LENGTH_SHORT).show();
@@ -146,5 +168,17 @@ public class MainActivity extends AppCompatActivity {
         Intent goToTutorial= new Intent(this, Tutorials.class);
         startActivity(goToTutorial);
     }
+
+    protected void onStart() {
+        super.onStart();
+        msAuth.addAuthStateListener(authListener);
+    }
+
+    @Override
+    public void onStop() {
+        super.onStop();
+        msAuth.removeAuthStateListener(authListener);
+    }
+
 }
 

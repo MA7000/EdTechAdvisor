@@ -14,7 +14,8 @@ tools:context="com.example.schooner.edtechadvisor.LoginActivity">
     android:text="Log In"
     android:textColor="@color/colorAccent"
     android:textSize="24dp"
-    android:textStyle="bold" />
+    android:textStyle="bold"
+    android:id="@+id/name"/>
 
 
     <EditText
@@ -23,7 +24,7 @@ tools:context="com.example.schooner.edtechadvisor.LoginActivity">
     android:layout_marginLeft="8dp"
     android:layout_marginRight="8dp"
     android:hint="School Affliated Email Address"
-    android:textColor="#ffffff" />
+        android:id="@+id/edit_text_email"/>
 
     <EditText
         android:layout_width="match_parent"
@@ -31,7 +32,7 @@ tools:context="com.example.schooner.edtechadvisor.LoginActivity">
         android:layout_marginLeft="8dp"
         android:layout_marginRight="8dp"
         android:hint="Password"
-        android:textColor="#ffffff" />
+        android:id="@+id/edit_text_password"/>
 
     <Button
         android:layout_width="match_parent"
@@ -43,7 +44,10 @@ tools:context="com.example.schooner.edtechadvisor.LoginActivity">
         android:background="@color/colorAccent"
         android:text="Log In"
         android:textColor="#ffffff"
-        android:textSize="15dp" />
+        android:textSize="15dp"
+        android:id="@+id/login"
+        android:onClick="logIn"
+        />
 
 <Button
     android:layout_width="match_parent"
