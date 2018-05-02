@@ -18,7 +18,7 @@
         <Button
             android:layout_width = "match_parent"
             android:layout_height="0dp"
-            android:text="Administrative Tools"
+            android:text="@string/admintitle"
             android:layout_margin = "4dp"
             android:id="@+id/admintools"
             android:background = "#86bbda"
@@ -32,7 +32,7 @@
         <Button
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:text="Content-Based Tools"
+            android:text="@string/contenttitle"
             android:id="@+id/content_tools"
             android:layout_margin = "4dp"
             android:background= "#ee4b6a"

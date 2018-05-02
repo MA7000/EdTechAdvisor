@@ -59,7 +59,7 @@
         <Button
             android:layout_width = "match_parent"
             android:layout_height = "wrap_content"
-            android:text = "Tutorial"
+            android:text = "@string/tutorialButton"
             android:layout_below = "@id/browse"
             style = "@style/AppTheme.Button"
             android:onClick = "goToTutorial"

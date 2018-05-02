@@ -5,7 +5,7 @@ android:layout_height="match_parent">
 
     <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
-        android:layout_height = "match_parent">
+        android:layout_height="match_parent">
 
 
         <LinearLayout
@@ -13,87 +13,103 @@ android:layout_height="match_parent">
             android:layout_height="match_parent"
             android:orientation="vertical">
 
+            <EditText
+                android:id="@+id/userNameInput"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"
+                android:hint="@string/name" />
+
             <TextView
+                android:id="@+id/lesson"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="How was the tool used in the lesson?"
                 android:layout_margin="8dp"
-                android:layout_marginLeft = "16dp"
-                android:layout_marginRight = "16dp"
-                android:id = "@+id/lesson"/>
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:hint="@string/toolUseQuestion" />
+
             <CheckBox
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Introduce content"
-                android:layout_margin="4dp"/>
+                android:layout_margin="4dp"
+                android:hint="@string/introduceContent" />
+
             <CheckBox
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Practice and reinforce content"
-                android:layout_margin="4dp"/>
+                android:layout_margin="4dp"
+                android:hint="@string/practiceContent" />
+
             <CheckBox
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Review content"
-                android:layout_margin="4dp"/>
+                android:layout_margin="4dp"
+                android:hint="@string/reviewContent" />
+
             <EditText
+                android:id="@+id/studentDrivenInput"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="@string/hint_name3"
-                android:layout_margin="16dp"/>
-            <EditText
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="@string/hint_name4"
-                android:layout_margin="16dp"/>
+                android:layout_margin="16dp"
+                android:hint="@string/hint_name3" />
 
             <EditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Easiness"
-                android:layout_margin="16dp"/>
-            <RatingBar
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:id = "@+id/easeRatingBar"/>
+                android:layout_margin="16dp"
+                android:hint="@string/hint_name4" />
+
+            <!--<EditText-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:hint="@string/easinessLabel"-->
+            <!--android:layout_margin="16dp"/>-->
+            <!--<RatingBar-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_gravity="center"-->
+            <!--android:id = "@+id/easeRatingBar"/>-->
+            <!--<EditText-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:hint="@string/userFriendliness"-->
+            <!--android:layout_margin="16dp"/>-->
+            <!--<RatingBar-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_gravity="center"-->
+            <!--android:id = "@+id/userEaseRatingBar"/>-->
             <EditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="User Friendliness"
-                android:layout_margin="16dp"/>
+                android:layout_margin="16dp"
+                android:hint="@string/overall" />
+
             <RatingBar
+                android:id="@+id/ratingBar"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:id = "@+id/userEaseRatingBar"/>
-            <EditText
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="Overall"
-                android:layout_margin="16dp"/>
-            <RatingBar
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:id = "@+id/ratingBar"/>
+                android:layout_gravity="center" />
+
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Will you use this tool again"
-                android:layout_margin="16dp"/>
+                android:layout_margin="16dp"
+                android:hint="@string/repeatTest" />
+
             <CheckBox
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Yes"
-                android:layout_margin="4dp"/>
+                android:layout_margin="4dp"
+                android:hint="string/yes" />
 
             <Button
+                style="@style/AppTheme.Button"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text = "Submit Review"
-                style = "@style/AppTheme.Button"
-                android:layout_gravity = "center"/>
+                android:layout_gravity="center"
+                android:text="@string/submitReview" />
 
         </LinearLayout>
     </ScrollView>

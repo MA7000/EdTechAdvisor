@@ -1,6 +1,7 @@
 <resources>
     <string name="app_name">EdTechAdvisor</string>
     <string name="browse">Browse </string>
+    <string name = "tutorialButton">Tutorial</string>
     <string name="suggest">Suggest</string>
     <string name="search_hint">Search</string>
     <string name="filler">"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
@@ -21,5 +22,29 @@
     <string name="tab_text_2">Tab 2</string>
     <string name="tab_text_3">Tab 3</string>
     <string name = "filler2">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore </string>
+
+    <string name = "adminwarning">"We are sorry. There are no administrative ed tech tools to view right now. Please check again later."</string>
+    <string name = "admintitle">Administrative Tools</string>
+    <string name = "contenttitle">Content-Based Tools</string>
+    <string name = "toolUseQuestion">"How was the tool used in the lesson?"</string>
+    <string name = "introduceContent">Introduce Content</string>
+    <string name = "practiceContent">"Practice and reinforce content"</string>
+    <string name = "reviewContent">Review Content</string>
+    <string name = "studentDrivenLearning">How does it drive student learning?</string>
+    <string name = "easinessLabel">Easiness</string>
+    <string name = "userFriendliness">User Friendliness</string>
+    <string name = "overall">Overall</string>
+    <string name = "repeatTest">Will you use this tool again</string>
+    <string name = "Yes">Yes</string>
+    <string name = "submitReview">Submit Review</string>
+    <string name = "addReview">Add Review </string>
+    <string name = "login">Login</string>
+    <string name = "name">Name</string>
+    <string name = "emailHint">School Affliated Email Address</string>
+    <string name = "noEmailHint">No account? Sign Up</string>
+
+
+    <!--Main-->
+
 
 </resources>
