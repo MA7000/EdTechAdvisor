@@ -59,6 +59,10 @@
         <activity android:name=".LoginActivity"
             android:parentActivityName=".MainActivity"
             ></activity>
+        <activity android:name=".Review"
+            android:theme="@style/AppTheme"
+            android:parentActivityName=".MainActivity"
+            ></activity>
     </application>
 
 </manifest>

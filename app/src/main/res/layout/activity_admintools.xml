@@ -9,7 +9,7 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text = "We are sorry. There are no administrative ed tech tools to view right now. Please check again later."
+        android:text = "@string/adminwarning"
         android:layout_margin = "16dp"
         android:textSize="20sp"/>
 

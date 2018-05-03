@@ -1,6 +1,8 @@
 package com.example.schooner.edtechadvisor;
 
+import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.widget.EditText;
 
 /**
  * Created by Schooner on 4/30/2018.
@@ -11,10 +13,23 @@ public class Review extends AppCompatActivity {
         public boolean toolUse;
         public String studentDriven;
         public String otherComments;
+        EditText userNameInput;
+        int objectId;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_review_tool);
+
+    }
+
+    public Review () {
+    }
 
     public String getName() {
         return name;
     }
+
 
     public void setName(String name) {
         this.name = name;
@@ -81,14 +96,15 @@ public class Review extends AppCompatActivity {
         public float overallRating;
         public boolean repeatTest;
 
-        public Review (String name, boolean toolUse, String studentDriven, String otherComments,
-                       float easeRating, float userFRating, float overallRating,boolean repeatTest) {
+        public Review (int objectId, boolean toolUse, String studentDriven, String otherComments,
+                       float overallRating,boolean repeatTest) {
+            this.objectId = objectId;
             this.name = name;
             this.toolUse = toolUse;
             this.studentDriven = studentDriven;
             this.otherComments = otherComments;
-            this.easeRating = easeRating;
-            this.userFRating = userFRating;
+//            this.easeRating = easeRating;
+//            this.userFRating = userFRating;
             this.overallRating = overallRating;
             this.repeatTest = repeatTest;
         }
