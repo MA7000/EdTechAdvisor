@@ -30,7 +30,7 @@ public class LoginActivity extends AppCompatActivity {
 
 
     public void goToSignUp(View view) {
-        Intent goToSignUp = new Intent(this, MainActivity.class);
+        Intent goToSignUp = new Intent(this, SignUp.class);
         startActivity(goToSignUp);
     }
 
