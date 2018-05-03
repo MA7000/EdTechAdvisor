@@ -1,9 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--This is the cardview template for the tool/object + their review. It should populate with user input-->
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+
+<ScrollView android:layout_height="match_parent"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+<RelativeLayout
+    android:layout_height = "match_parent"
+    android:layout_width = "match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android">
 
     <include layout = "@layout/card_view_object"
         android:layout_width = "match_parent"
@@ -11,12 +16,27 @@
         android:id="@+id/card_view_object3"
         android:layout_margin = "8dp">
 
+    <RatingBar
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:id = "@+id/ratingBar"
+        android:isIndicator="true"/>
+
     </include>
     <include layout = "@layout/card_view_review"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:id="@+id/card_view_object4"
         android:layout_below="@id/card_view_object3"
         android:layout_margin = "8dp"></include>
+
+
+    <include layout = "@layout/card_view_review2"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_below="@id/card_view_object4"
+    android:layout_margin = "8dp"></include>
 
     <Button
         android:layout_width="match_parent"
@@ -31,3 +51,4 @@
 
 
 
+</ScrollView>

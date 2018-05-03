@@ -58,7 +58,7 @@ public class MainActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case R.id.share:
-                Toast.makeText(this, "Share it baby", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "Sharing", Toast.LENGTH_SHORT).show();
                 return true;
             default:
                 return super.onOptionsItemSelected(item);
