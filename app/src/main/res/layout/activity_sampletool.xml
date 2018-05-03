@@ -24,7 +24,8 @@
         android:text = "@string/addReview"
         style = "@style/AppTheme.Button"
         android:layout_gravity = "center"
-        android:layout_alignParentBottom="true"/>
+        android:layout_alignParentBottom="true"
+        android:onClick = "goReview"/>
 
 </RelativeLayout>
 

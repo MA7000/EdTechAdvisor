@@ -27,4 +27,9 @@ public class SampleTool extends AppCompatActivity {
 
     }
 
+    public void goReview (View view) {
+        Intent goReview = new Intent(this, Review.class);
+        startActivity(goReview);
+    }
+
 }

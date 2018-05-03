@@ -1,5 +1,6 @@
 package com.example.schooner.edtechadvisor;
 
+import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.EditText;
 
@@ -15,6 +16,15 @@ public class Review extends AppCompatActivity {
         EditText userNameInput;
         int objectId;
 
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_review_tool);
+
+    }
+
+    public Review () {
+    }
 
     public String getName() {
         return name;
@@ -88,6 +98,7 @@ public class Review extends AppCompatActivity {
 
         public Review (int objectId, boolean toolUse, String studentDriven, String otherComments,
                        float overallRating,boolean repeatTest) {
+            this.objectId = objectId;
             this.name = name;
             this.toolUse = toolUse;
             this.studentDriven = studentDriven;
