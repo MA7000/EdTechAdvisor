@@ -32,26 +32,33 @@
         <activity
             android:name=".Tutorials"
             android:label="@string/title_activity_tutorials"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
-        <activity android:name=".AdminTools"
-            android:label = "Adminsitrative Tools"
-            android:theme = "@style/AppTheme"
-            android:parentActivityName=".Category"></activity>
-        <activity android:name=".ContentTools"
-            android:label = "Content-Based Tools"
-            android:theme = "@style/AppTheme"
-            android:parentActivityName=".Category"></activity>
-        <activity android:name=".ClassDojo"
-            android:label = "Class Dojo"
-            android:theme = "@style/AppTheme"
-            android:parentActivityName=".ContentTools"></activity>
-        <activity android:name=".SignUp"
-            android:theme = "@style/AppTheme"
-            android:parentActivityName=".MainActivity"></activity>
-        <activity android:name=".SampleTool"
-            android:theme = "@style/AppTheme"
-            android:parentActivityName=".Category"></activity>
-
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".AdminTools"
+            android:label="Adminsitrative Tools"
+            android:parentActivityName=".Category"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".ContentTools"
+            android:label="Content-Based Tools"
+            android:parentActivityName=".Category"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".ClassDojo"
+            android:label="Class Dojo"
+            android:parentActivityName=".ContentTools"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".SignUp"
+            android:parentActivityName=".MainActivity"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".SampleTool"
+            android:parentActivityName=".Category"
+            android:theme="@style/AppTheme" />
+        <activity android:name=".LoginActivity"
+            android:parentActivityName=".MainActivity"
+            ></activity>
     </application>
 
 </manifest>

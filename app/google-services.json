@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "1056900762274",
+    "firebase_url": "https://edtechadvisor-13952.firebaseio.com",
+    "project_id": "edtechadvisor-13952",
+    "storage_bucket": "edtechadvisor-13952.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1056900762274:android:cb4821c9ebb7083c",
+        "android_client_info": {
+          "package_name": "com.example.schooner.edtechadvisor"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1056900762274-ct8mfpsc9htfh6rve5un1nhtuiqcho8p.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.schooner.edtechadvisor",
+            "certificate_hash": "a8557d5f8bfe4238d14a5534204fd8c8231a9d86"
+          }
+        },
+        {
+          "client_id": "1056900762274-bk3e8g45oj9i3pb4fesom9p33bpm8cjb.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAsAaXg-RgxDN4kIr7m7srVhXQI0JhyQ5w"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1056900762274-bk3e8g45oj9i3pb4fesom9p33bpm8cjb.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
