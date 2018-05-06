@@ -21,7 +21,7 @@
     <string name="tab_text_1">Tab 1</string>
     <string name="tab_text_2">Tab 2</string>
     <string name="tab_text_3">Tab 3</string>
-    <string name = "filler2">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore </string>
+    <string name = "filler2" translatable="false">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore </string>
 
     <string name = "adminwarning">"We are sorry. There are no administrative ed tech tools to view right now. Please check again later."</string>
     <string name = "admintitle">Administrative Tools</string>

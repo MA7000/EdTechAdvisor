@@ -21,22 +21,34 @@ import android.view.View;
 public class SampleTool extends AppCompatActivity {
     private List <Review> reviews;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sampletool);
 
+        initialData();
+
+        RecyclerView rerecyclerview = findViewById(R.id.review_recycler_view);
+        rerecyclerview.setHasFixedSize(true);
+        rerecyclerview.setLayoutManager(new LinearLayoutManager(this));
+        rerecyclerview.setAdapter(new ReviewsAdapter(reviews, this));
+
+
+
 
 
     }
 
+
+
     private void initialData (){
         reviews = new ArrayList<>();
-        reviews.add (new Review (12, true, "Students can monitor their own progress", "Parents can be involved but don't have to be.", true));
-        reviews.add (new Review (12, true, "Students can get feedback about their performance", "Sometimes malfunctions midway", false));
-        reviews.add (new Review (12, true, "Allows students to keep track of their behavior", "The monsters are really cute.", true));
-        reviews.add (new Review (13, true, "Students can answer questions in live time!", "Can get too competitive sometimes.", true));
-        reviews.add (new Review (14, true, "Students can respond to questions and get feedback instantly.", "It's like a calmer version of Kahoot.", true));
+        reviews.add (new Review (12, "Bellatrix","Introduce content","Students can monitor their own progress", "Parents can be involved but don't have to be.", "Yes"));
+        reviews.add (new Review (12, "Tom", "Introduce content", "Students can get feedback about their performance", "Sometimes malfunctions midway", "No"));
+        reviews.add (new Review (12, "Hagrid", "...", "Allows students to keep track of their behavior", "The monsters are really cute.", "Yes"));
+        reviews.add (new Review (13, "Hermione","Introduce content",  "Students can answer questions in live time!", "Can get too competitive sometimes.", "Yes"));
+        reviews.add (new Review (14, "Ron", "Introduce content", "Students can respond to questions and get feedback instantly.", "It's like a calmer version of Kahoot.", "Yes"));
 
     }
 
