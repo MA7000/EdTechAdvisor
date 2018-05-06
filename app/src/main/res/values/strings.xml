@@ -42,6 +42,7 @@
     <string name = "name">Name</string>
     <string name = "emailHint">School Affliated Email Address</string>
     <string name = "noEmailHint">No account? Sign Up</string>
+    <string name = "share" >"Check out this great app - EdTechAdvisor"</string>
 
 
     <!--Main-->
