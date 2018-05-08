@@ -42,7 +42,7 @@ public class ContentTools extends AppCompatActivity {
 
 //        initialData();
 
-        RecyclerView recyclerView = (RecyclerView) findViewById(R.id.recycler_view);
+        RecyclerView recyclerView = findViewById(R.id.recycler_view);
         recyclerView.setHasFixedSize(true);
        recyclerView.setLayoutManager(new LinearLayoutManager(this));
         objectsAdapter = new ObjectsAdapter (tools, this);

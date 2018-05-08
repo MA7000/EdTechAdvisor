@@ -52,17 +52,17 @@ public class SampleTool extends AppCompatActivity {
         setContentView(R.layout.activity_sampletool);
 
         toolCard = findViewById(R.id.card_view_object3);
-        learnMore = (Button) toolCard.findViewById(R.id.learn);
+        learnMore = toolCard.findViewById(R.id.learn);
         learnMore.setVisibility(View.GONE);
-        review = (Button) toolCard.findViewById(R.id.review);
-        toolName = (TextView) toolCard.findViewById(R.id.tool_name);
+        review = toolCard.findViewById(R.id.review);
+        toolName = toolCard.findViewById(R.id.tool_name);
         name = toolName.getText().toString();
 
         initialData();
         RecyclerView rerecyclerview = findViewById(R.id.review_recycler_view);
         rerecyclerview.setHasFixedSize(true);
         rerecyclerview.setLayoutManager(new LinearLayoutManager(this));
-//        rerecyclerview.setAdapter(new ReviewsAdapter(reviews, this));
+        rerecyclerview.setAdapter(new ReviewsAdapter(reviews, this));
 
         //        setting up authentication
         msAuth = FirebaseAuth.getInstance();

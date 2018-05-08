@@ -1,20 +1,26 @@
 package com.example.schooner.edtechadvisor;
 
 import android.content.Intent;
+import android.content.Context;
 import android.media.Rating;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.RatingBar;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
 import org.w3c.dom.Text;
+
+import java.util.ArrayList;
+import java.util.List;
 
 //This page should lead users to write reviews of objects/tools
 
@@ -42,6 +48,8 @@ public class SuggestActivity extends AppCompatActivity {
     private float over;
     private boolean rep;
 
+    private Button reviewBtn;
+
     private ReviewObject currentReview;
 
     private FirebaseDatabase database;
@@ -60,72 +68,52 @@ public class SuggestActivity extends AppCompatActivity {
         System.out.println("----------------------------------------------THIS IS MY TOOL ID: " + toolId);
 
         // set page title to the name of the tool being reviewed
-        nameField = (TextView) findViewById(R.id.tool_name);
+        nameField = findViewById(R.id.tool_name);
         nameField.setText(toolName);
         System.out.println("--------------------------------------WHY WON'T TOOL NAME WORK? " + toolName);
 
-        database = FirebaseDatabase.getInstance();
-
-    }
-
-    public void onSubmit(View view) {
         // retrieve the values for each of the fields
-        introduceContent = (CheckBox) findViewById(R.id.introducecontent);
-        practiceContent = (CheckBox) findViewById(R.id.practicecontent);
-        reviewContent = (CheckBox) findViewById (R.id.reviewcontent);
-        studentDrivenInput = (EditText) findViewById (R.id.studentDriven);
-        otherCommentsInput = (EditText) findViewById (R.id.othercomments);
-        easinessInput = (RatingBar) findViewById (R.id.easeRatingBar);
-        userFriendlinessInput = (RatingBar) findViewById (R.id.userEaseRatingBar);
-        overAllInput = (RatingBar) findViewById (R.id.ratingBar);
-        repeatTestInput = (CheckBox) findViewById (R.id.repeatTest);
+        introduceContent = findViewById(R.id.introducecontent);
+        practiceContent = findViewById(R.id.practicecontent);
+        reviewContent = findViewById (R.id.reviewcontent);
+        studentDrivenInput = findViewById (R.id.studentDriven);
+        otherCommentsInput = findViewById (R.id.othercomments);
+        easinessInput = findViewById (R.id.easeRatingBar);
+        userFriendlinessInput = findViewById (R.id.userEaseRatingBar);
+        overAllInput = findViewById (R.id.ratingBar);
+        repeatTestInput = findViewById (R.id.repeatTest);
 
-        // update values to be stored in a review object
+        reviewBtn = findViewById(R.id.review_btn);
 
-        intro = introduceContent.isChecked();
-        prac = practiceContent.isChecked();
-        rev = reviewContent.isChecked();
-        stud = studentDrivenInput.getText().toString();
-        other = otherCommentsInput.getText().toString();
-        ease = easinessInput.getRating();
-        user = userFriendlinessInput.getRating();
-        over = overAllInput.getRating();
-        rep = repeatTestInput.isChecked();
+        database = FirebaseDatabase.getInstance();
+        myRef = database.getReference("reviews");
 
-        // create a new review object to be stored in the database
-        currentReview = new ReviewObject(intro, prac, rev, stud, other, ease, user, over, rep);
+        reviewBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick (View v){
+                // update values to be stored in a review object
+                intro = introduceContent.isChecked();
+                System.out.println("INTRO? " + intro);
+                prac = practiceContent.isChecked();
+                System.out.println("PRAC? " + prac);
+                rev = reviewContent.isChecked();
+                stud = studentDrivenInput.getText().toString();
+                other = otherCommentsInput.getText().toString();
+                ease = easinessInput.getRating();
+                user = userFriendlinessInput.getRating();
+                over = overAllInput.getRating();
+                rep = repeatTestInput.isChecked();
 
+                // create a new review object to be stored in the database
+                currentReview = new ReviewObject(intro, prac, rev, stud, other, ease, user, over, rep);
 
-        // get ready to access the database
-
-        DatabaseReference myRef = database.getReference("reviews").push();
-        myRef.setValue(toolId);
-//        myRef.setValue(currentReview);
-        System.out.println("----------------------------------------------SUBMITTED");
-
-//        introduceContent= (CheckBox) findViewById(R.id.introducecontent);
-//        boolean introduceContentIsChecked= introduceContent.isChecked();
-//
-//        practiceContent= (CheckBox) findViewById(R.id.practicecontent);
-//        boolean practiceContentIsChecked= practiceContent.isChecked();
-//
-//        CheckBox reviewContent= (CheckBox) findViewById(R.id.reviewcontent);
-//        boolean reviewContentIsChecked= reviewContent.isChecked();
-//
-//        EditText studentDrivenInput = (EditText) findViewById(R.id.studentDriven);
-//        String studentDriven= studentDrivenInput.getText().toString();
-//
-//        EditText otherCommentsInput = (EditText) findViewById(R.id.othercomments);
-//        String otherComments= otherCommentsInput.getText().toString();
-//
-////        Rating bar needs to be declared and initialized with greater depth. If we want to simplify this in anyway, I'm down.
-////        RatingBar easinessInput = (RatingBar) findViewById(R.id.easiness);
-////        float easeRating = easinessInput.getRating();
-//
-//        CheckBox repeatTestInput= (CheckBox) findViewById(R.id.repeatTest);
-//        boolean repeatTest= repeatTestInput.isChecked();
-
+                // get ready to access the database
+                myRef.child(toolId).push().setValue(currentReview);
+                System.out.println("----------------------------------------------SUBMITTED working");
+            }
+        } );
     }
+
 
 }
 

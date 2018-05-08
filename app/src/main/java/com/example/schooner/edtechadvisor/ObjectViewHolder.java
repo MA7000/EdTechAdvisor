@@ -28,12 +28,12 @@ public class ObjectViewHolder extends RecyclerView.ViewHolder {
 
         public ObjectViewHolder (View itemView, final Context context) {
             super (itemView);
-            cardView = (CardView) itemView.findViewById(R.id.card_view);
-            toolName = (TextView) itemView.findViewById(R.id.tool_name);
-            toolInfo = (TextView) itemView.findViewById(R.id.tool_info);
-            toolPhoto= (ImageView) itemView.findViewById(R.id.object_logo);
-            toolLearn = (Button) itemView.findViewById(R.id.learn);
-            toolReview = (Button) itemView.findViewById(R.id.review);
+            cardView = itemView.findViewById(R.id.card_view);
+            toolName = itemView.findViewById(R.id.tool_name);
+            toolInfo = itemView.findViewById(R.id.tool_info);
+            toolPhoto= itemView.findViewById(R.id.object_logo);
+            toolLearn = itemView.findViewById(R.id.learn);
+            toolReview = itemView.findViewById(R.id.review);
 
 //            this takes the user from the recyclerview to the specific tool page. it should take the user to a template that
 //          autopopulates based on the tool clicked

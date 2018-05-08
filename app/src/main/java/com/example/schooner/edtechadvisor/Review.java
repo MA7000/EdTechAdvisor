@@ -64,11 +64,11 @@ public class Review extends AppCompatActivity {
     public void submitReview() {
         int objectId = 12;
 
-        EditText userNameInput = (EditText) findViewById(R.id.userNameInput);
+        EditText userNameInput = findViewById(R.id.userNameInput);
         String userName = userNameInput.getText().toString();
         userNameResponse.setText(userName);
 
-        CheckBox introduceContentInput = (CheckBox) findViewById(R.id.introducecontent);
+        CheckBox introduceContentInput = findViewById(R.id.introducecontent);
         boolean introduceContent = introduceContentInput.isChecked();
 
         if  (introduceContent) {
@@ -80,15 +80,15 @@ public class Review extends AppCompatActivity {
             answer1.setText(toolUse);
         }
 
-        EditText studentDrivenInput = (EditText) findViewById(R.id.studentDrivenInput);
+        EditText studentDrivenInput = findViewById(R.id.studentDrivenInput);
         String studentDriven = studentDrivenInput.getText().toString();
         answer2.setText(studentDriven);
 
-        EditText otherCommentsInput = (EditText) findViewById(R.id.otherCommentsInput);
+        EditText otherCommentsInput = findViewById(R.id.otherCommentsInput);
         String otherComments = otherCommentsInput.getText().toString();
         answer3.setText(otherComments);
 
-        CheckBox repeatUseInput = (CheckBox) findViewById(R.id.repeatUseTest);
+        CheckBox repeatUseInput = findViewById(R.id.repeatUseTest);
         boolean repeatTestInputTF = repeatUseInput.isChecked();
         if (repeatTestInputTF) {
             String repeatUse = "Yes";

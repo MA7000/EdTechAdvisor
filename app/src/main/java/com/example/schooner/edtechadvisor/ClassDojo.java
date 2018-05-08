@@ -30,7 +30,7 @@ public class ClassDojo extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_classdojo);
 
-        RatingBar ratingBar1 = (RatingBar) findViewById(R.id.ratingBar);
+        RatingBar ratingBar1 = findViewById(R.id.ratingBar);
 
     }
 }

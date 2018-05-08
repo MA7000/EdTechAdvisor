@@ -30,7 +30,7 @@ import java.util.List;
 import java.util.UUID;
 
 public class MainActivity extends AppCompatActivity {
-    private List<Object> tools= new ArrayList<>();;
+    private List<Object> tools= new ArrayList<>();
     private ObjectsAdapter objectsAdapter;
     RecyclerView recyclerView;
     Object newTool;
@@ -50,7 +50,7 @@ public class MainActivity extends AppCompatActivity {
 
         initialData();
 
-        RecyclerView recyclerView = (RecyclerView) findViewById(R.id.recycler_view);
+        RecyclerView recyclerView = findViewById(R.id.recycler_view);
         LinearLayoutManager horizontalLayoutManager
                 = new LinearLayoutManager(MainActivity.this, LinearLayoutManager.HORIZONTAL, false);
         recyclerView.setLayoutManager(horizontalLayoutManager);
@@ -98,7 +98,7 @@ public class MainActivity extends AppCompatActivity {
                     System.out.println("HELLO. This user is in the database");
                     userReference = database.getReference(user.getUid());
                 }
-            };
+            }
         };
     }
 
