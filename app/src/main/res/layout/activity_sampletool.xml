@@ -23,6 +23,17 @@
         android:id = "@+id/review_recycler_view"
         ></android.support.v7.widget.RecyclerView>
 
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text = "@string/addReview"
+        style = "@style/AppTheme.Button"
+        android:layout_gravity = "center"
+        android:layout_alignParentBottom="true"
+        android:layout_below="@id/review_recycler_view"
+        android:id="@+id/bottom"
+        />
+
 </RelativeLayout>
 
 

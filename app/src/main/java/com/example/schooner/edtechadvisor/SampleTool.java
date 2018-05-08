@@ -34,6 +34,7 @@ public class SampleTool extends AppCompatActivity {
     private View toolCard;
     private Button learnMore;
     private Button review;
+    private Button bottomRev;
     private TextView toolName;
     private TextView toolInfo;
     private ImageView logo;
@@ -58,6 +59,7 @@ public class SampleTool extends AppCompatActivity {
         learnMore = toolCard.findViewById(R.id.learn);
         learnMore.setVisibility(View.GONE);
         review = toolCard.findViewById(R.id.review);
+        bottomRev = findViewById(R.id.bottom);
         toolName = toolCard.findViewById(R.id.tool_name);
         toolInfo = toolCard.findViewById(R.id.tool_info);
         logo = toolCard.findViewById(R.id.object_logo);
@@ -117,6 +119,24 @@ public class SampleTool extends AppCompatActivity {
 
         // listen for clicks on the Review button
         review.setOnClickListener(new View.OnClickListener() {
+            FirebaseUser user = msAuth.getCurrentUser();
+            @Override
+            public void onClick (View v){
+                String text = toolName.getText().toString();
+                if (user != null) {
+                    Toast.makeText(SampleTool.this, text ,Toast.LENGTH_SHORT).show();
+                    Intent intent = new Intent (SampleTool.this, SuggestActivity.class);
+                    intent.putExtra("ID_STRING", toolId.toString());
+                    intent.putExtra("NAME_STRING", name.toString());
+                    startActivity(intent);
+                } else {
+                    Toast.makeText(SampleTool.this, "Please log in to review this tool." ,Toast.LENGTH_SHORT).show();
+                }
+            }
+        } );
+
+        // listen for clicks on the Review button
+        bottomRev.setOnClickListener(new View.OnClickListener() {
             FirebaseUser user = msAuth.getCurrentUser();
             @Override
             public void onClick (View v){
