@@ -43,6 +43,14 @@ public class ReviewObject {
         this.introduceContent = introduceContent;
     }
 
+    public String getIntroduceContent () {
+        if (this.introduceContent == true) {
+            return "To Introduce Content, ";
+        } else {
+            return "";
+        }
+    }
+
     public boolean isPracticeContent() {
         return practiceContent;
     }
@@ -51,12 +59,28 @@ public class ReviewObject {
         this.practiceContent = practiceContent;
     }
 
+    public String getPracticeContent () {
+        if (this.practiceContent == true) {
+            return "To Practice Content, ";
+        } else {
+            return "";
+        }
+    }
+
     public boolean isReviewContent() {
         return reviewContent;
     }
 
     public void setReviewContent(boolean reviewContent) {
         this.reviewContent = reviewContent;
+    }
+
+    public String getReviewContent () {
+        if (this.introduceContent == true) {
+            return "To Review Content";
+        } else {
+            return "";
+        }
     }
 
     public String getStudentDrivenInput() {
@@ -101,5 +125,13 @@ public class ReviewObject {
 
     public void setRepeatTestInput(boolean repeatTestInput) {
         this.repeatTestInput = repeatTestInput;
+    }
+
+    public String getRepeatTestInput () {
+        if (this.repeatTestInput == true) {
+            return "yes";
+        } else {
+            return "no";
+        }
     }
 }

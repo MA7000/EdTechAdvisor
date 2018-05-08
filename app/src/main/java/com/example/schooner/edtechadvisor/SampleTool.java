@@ -10,6 +10,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 import java.util.ArrayList;
@@ -35,9 +36,14 @@ public class SampleTool extends AppCompatActivity {
     private Button review;
     private boolean userState;
     private TextView toolName;
+    private TextView toolInfo;
+    private ImageView logo;
     private String name;
     private String toolId;
-    private List <Review> reviews;
+    private List <ReviewObject> reviews;
+    private String info;
+    private String imjId;
+    private String tag;
 
     private FirebaseDatabase database;
 
@@ -56,13 +62,23 @@ public class SampleTool extends AppCompatActivity {
         learnMore.setVisibility(View.GONE);
         review = toolCard.findViewById(R.id.review);
         toolName = toolCard.findViewById(R.id.tool_name);
-        name = toolName.getText().toString();
+        toolInfo = toolCard.findViewById(R.id.tool_info);
+        logo = toolCard.findViewById(R.id.object_logo);
+
+//        name = toolName.getText().toString();
 
         initialData();
         RecyclerView rerecyclerview = findViewById(R.id.review_recycler_view);
         rerecyclerview.setHasFixedSize(true);
         rerecyclerview.setLayoutManager(new LinearLayoutManager(this));
         rerecyclerview.setAdapter(new ReviewsAdapter(reviews, this));
+
+        Intent suggestIntent = getIntent();
+        name = suggestIntent.getStringExtra("NAME_STRING");
+        System.out.println("-----------------------------------THIS IS MY SENT NAME = " + name);
+        toolName.setText(name);
+
+
 
         //        setting up authentication
         msAuth = FirebaseAuth.getInstance();
@@ -78,18 +94,29 @@ public class SampleTool extends AppCompatActivity {
                     System.out.println("-----------------------------------THIS IS MY VARIABLE DB NAME = " + dbName);
                     if (dbName.equals(name)) {
                         toolId = postSnapshot.child("toolId").getValue(String.class);
+                        String info = postSnapshot.child("info").getValue(String.class);
+                        toolInfo.setText(info);
+                        int imjId = postSnapshot.child("imageId").getValue(int.class);
+                        logo.setImageResource(imjId);
+                        String tag = postSnapshot.child("tag").getValue(String.class);
                         System.out.println("TOOL ID: " + toolId);
+
                         return;
                     } else {
                         System.out.println("The names are not equal.");
                     }
                 }
             }
+
+
             @Override
             public void onCancelled(DatabaseError error) {
                 Toast.makeText(SampleTool.this, "Error loading Firebase", Toast.LENGTH_SHORT).show();
             }
         });
+
+
+
 
         // listen for clicks on the Review button
         review.setOnClickListener(new View.OnClickListener() {
@@ -111,11 +138,11 @@ public class SampleTool extends AppCompatActivity {
 
         private void initialData (){
             reviews = new ArrayList<>();
-            reviews.add (new Review (12, "Bellatrix","Introduce content","Students can monitor their own progress", "Parents can be involved but don't have to be.", "Yes"));
-            reviews.add (new Review (12, "Tom", "Introduce content", "Students can get feedback about their performance", "Sometimes malfunctions midway", "No"));
-            reviews.add (new Review (12, "Hagrid", "...", "Allows students to keep track of their behavior", "The monsters are really cute.", "Yes"));
-            reviews.add (new Review (13, "Hermione","Introduce content",  "Students can answer questions in live time!", "Can get too competitive sometimes.", "Yes"));
-            reviews.add (new Review (14, "Ron", "Introduce content", "Students can respond to questions and get feedback instantly.", "It's like a calmer version of Kahoot.", "Yes"));
+            reviews.add (new ReviewObject (true,false, true,"Students can monitor their own progress", "Parents can be involved but don't have to be.", 3, 4, 3, true));
+            reviews.add (new ReviewObject (false,false, true,"Students can get feedback about their performance", "Sometimes malfunctions midway", 2, 2, 2, false));
+            reviews.add (new ReviewObject (true,true, true,"Allows students to keep track of their behavior", "The monsters are really cute.", 4, 4, 4, true));
+            reviews.add (new ReviewObject (true,false, false,"Students can answer questions in live time!", "Can get too competitive sometimes.", 3, 3, 3, true));
+            reviews.add (new ReviewObject (false,false, false,"Students can respond to questions and get feedback instantly.", "It's like a calmer version of Kahoot.", 5, 4, 4, true));
         }
     }
 

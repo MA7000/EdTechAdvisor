@@ -20,10 +20,10 @@ import android.view.ViewGroup;
 
 public class ReviewsAdapter extends  RecyclerView.Adapter <ReviewViewHolder> {
 
-        private List<Review> reviews;
+        private List<ReviewObject> reviews;
         private Context context;
 
-        public ReviewsAdapter (List<Review> reviews,Context context){
+        public ReviewsAdapter (List<ReviewObject> reviews,Context context){
             this.reviews=reviews;
             this.context=context;
         }
@@ -37,13 +37,18 @@ public class ReviewsAdapter extends  RecyclerView.Adapter <ReviewViewHolder> {
 
         @Override
         public void onBindViewHolder(ReviewViewHolder holder,int position){
-            Review review =reviews.get(position);
-            holder.userNameResponse.setText((CharSequence) review.userNameInput);
-            holder.answer1.setText((CharSequence) review.answer1);
-            holder.answer2.setText ((CharSequence)review.answer2);
-            holder.answer3.setText ((CharSequence)review.answer3);
-            holder.answer6.setText ((CharSequence)review.answer6);
-            holder.answer7.setText ((CharSequence)review.answer7);
+            ReviewObject review =reviews.get(position);
+//            holder.userNameResponse.setText((CharSequence) review.userNameInput);
+            holder.answer1.setText(review.getIntroduceContent() + review.getPracticeContent() + review.getReviewContent());
+            holder.answer2.setText(review.studentDrivenInput);
+            holder.answer3.setText (review.otherCommentsInput);
+            holder.rating4.setRating(review.getEasinessInput());
+            holder.rating5.setRating(review.getUserFriendlinessInput());
+//            holder.answer4.setText(String.valueOf(review.getEasinessInput()));
+//            holder.answer5.setText(String.valueOf(review.getUserFriendlinessInput()));
+//            holder.answer6.setText (String.valueOf(review.getOverAllInput()));
+            holder.answer7.setText (review.getRepeatTestInput());
+            holder.rating6.setRating(review.getOverAllInput());
         }
 
         @Override

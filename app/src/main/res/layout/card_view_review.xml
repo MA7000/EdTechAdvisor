@@ -5,7 +5,7 @@
     android:layout_height="wrap_content"
     android:id = "@+id/card_view_review"
     android:layout_margin = "8dp"
-    >
+    android:clickable="false">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -15,18 +15,18 @@
        android:id = "@+id/reviewcard">
         >
 
-        <TextView
-            android:id="@+id/userName"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="User:" />
-        <TextView
-            android:id="@+id/userNameResponse"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Harry Potter"
-            android:layout_marginLeft="20dp"
-            android:textColor="@color/colorPrimary"/>
+        <!--<TextView-->
+            <!--android:id="@+id/userName"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:text="User:" />-->
+        <!--<TextView-->
+            <!--android:id="@+id/userNameResponse"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:text="Harry Potter"-->
+            <!--android:layout_marginLeft="20dp"-->
+            <!--android:textColor="@color/colorPrimary"/>-->
         <TextView
             android:id="@+id/lesson"
             android:layout_width="wrap_content"
@@ -64,11 +64,11 @@
             android:text="Sometimes malfunctions midway."
             android:layout_marginLeft="20dp"
             android:textColor="@color/colorPrimary"/>
-        <!--<TextView-->
-            <!--android:id="@+id/easiness"-->
-            <!--android:layout_width="wrap_content"-->
-            <!--android:layout_height="wrap_content"-->
-            <!--android:text="Easiness:" />-->
+        <TextView
+            android:id="@+id/easiness"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Easiness:" />
         <!--<TextView-->
             <!--android:id="@+id/answer4"-->
             <!--android:layout_width="wrap_content"-->
@@ -76,11 +76,17 @@
             <!--android:text="sample user answer 4"-->
             <!--android:layout_marginLeft="20dp"-->
             <!--android:textColor="@color/colorPrimary"/>-->
-        <!--<TextView-->
-            <!--android:id="@+id/userFriendliness"-->
-            <!--android:layout_width="wrap_content"-->
-            <!--android:layout_height="wrap_content"-->
-            <!--android:text="User Friendliness:" />-->
+        <RatingBar
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:isIndicator="true"
+            android:numStars="5"
+            android:id="@+id/answer4"/>
+        <TextView
+            android:id="@+id/userFriendliness"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="User Friendliness:" />
         <!--<TextView-->
             <!--android:id="@+id/answer5"-->
             <!--android:layout_width="wrap_content"-->
@@ -88,24 +94,31 @@
             <!--android:text="sample user answer 5"-->
             <!--android:layout_marginLeft="20dp"-->
             <!--android:textColor="@color/colorPrimary"/>-->
+        <RatingBar
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:isIndicator="true"
+            android:numStars="5"
+            android:id="@+id/answer5"/>
         <TextView
             android:id="@+id/overall"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Overall:" />
-        <TextView
-            android:id="@+id/answer6"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="2 stars"
-            android:layout_marginLeft="20dp"
-            android:textColor="@color/colorPrimary"/>
+        <!--<TextView-->
+            <!--android:id="@+id/answer6"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:text="2 stars"-->
+            <!--android:layout_marginLeft="20dp"-->
+            <!--android:textColor="@color/colorPrimary"/>-->
 
         <RatingBar
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:isIndicator="true"
-            android:numStars="5" />
+            android:numStars="5"
+            android:id="@+id/answer6"/>
 
         <TextView
             android:id="@+id/reuse"

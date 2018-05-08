@@ -1,5 +1,6 @@
 package com.example.schooner.edtechadvisor;
 
+import java.io.Serializable;
 import java.util.UUID;
 
 /**
@@ -7,7 +8,7 @@ import java.util.UUID;
  * this is the tool object
  */
 
-public class Object {
+public class Object implements Serializable {
         public String name;
         public String info;
         public int imageId;
@@ -22,5 +23,45 @@ public class Object {
             this.toolId = UUID.randomUUID().toString();
             this.tag = tag;
         }
+
+    public String getName() {
+        return name;
     }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getInfo() {
+        return info;
+    }
+
+    public void setInfo(String info) {
+        this.info = info;
+    }
+
+    public int getImageId() {
+        return imageId;
+    }
+
+    public void setImageId(int imageId) {
+        this.imageId = imageId;
+    }
+
+    public String getToolId() {
+        return toolId;
+    }
+
+    public void setToolId(String toolId) {
+        this.toolId = toolId;
+    }
+
+    public String getTag() {
+        return tag;
+    }
+
+    public void setTag(String tag) {
+        this.tag = tag;
+    }
+}
 

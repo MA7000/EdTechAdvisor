@@ -31,7 +31,7 @@ import java.util.UUID;
 
 public class MainActivity extends AppCompatActivity {
     private List<Object> tools= new ArrayList<>();
-    private ObjectsAdapter objectsAdapter;
+    private MainObjectsAdapter objectsAdapter;
     RecyclerView recyclerView;
     Object newTool;
 
@@ -56,7 +56,7 @@ public class MainActivity extends AppCompatActivity {
         recyclerView.setLayoutManager(horizontalLayoutManager);
         recyclerView.setHasFixedSize(true);
 //        recyclerView.setLayoutManager(new LinearLayoutManager(this));
-        objectsAdapter = new ObjectsAdapter (tools, this);
+        objectsAdapter = new MainObjectsAdapter (tools, this);
         recyclerView.setAdapter(objectsAdapter);
 
 /**

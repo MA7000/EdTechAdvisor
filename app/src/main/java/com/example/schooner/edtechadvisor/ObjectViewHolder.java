@@ -35,6 +35,7 @@ public class ObjectViewHolder extends RecyclerView.ViewHolder {
             toolLearn = itemView.findViewById(R.id.learn);
             toolReview = itemView.findViewById(R.id.review);
 
+
 //            this takes the user from the recyclerview to the specific tool page. it should take the user to a template that
 //          autopopulates based on the tool clicked
 //            and the reviews associated with it//
@@ -53,19 +54,11 @@ public class ObjectViewHolder extends RecyclerView.ViewHolder {
                 public void onClick (View v){
                     Toast.makeText(context, toolName.getText(),Toast.LENGTH_SHORT).show();
                     Intent intent = new Intent (context, SampleTool.class);
+                    intent.putExtra("NAME_STRING", toolName.getText().toString());
                     context.startActivity(intent);
+                    System.out.println("THIS IS MY CARD VIEW WHAT IS THE NAME: " + toolName.getText().toString());
                 }
             } );
-
-            toolReview.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick (View v){
-                    Toast.makeText(context, toolName.getText(),Toast.LENGTH_SHORT).show();
-                    Intent intent = new Intent (context, SuggestActivity.class);
-                    context.startActivity(intent);
-                }
-            } );
-
 
         }
     }

@@ -63,8 +63,11 @@ public class ContentTools extends AppCompatActivity {
                     String tag = postSnapshot.child("tag").getValue(String.class);
                     if (tag.equals("management")) {
                         String name = postSnapshot.child("name").getValue(String.class);
+                        System.out.println("----------------NAME----------------" + name);
                         String info = postSnapshot.child("info").getValue(String.class);
-                        String objId = postSnapshot.child("objectId").getValue(Long.class).toString();
+                        System.out.println("----------------INFO----------------" + info);
+
+                        String objId = postSnapshot.child("imageId").getValue(Long.class).toString();
                         tools.add(new Object(name, info, Integer.parseInt(objId), tag));
                         System.out.println("Tool: " + name + " | Id: " + objId + " | Info: " + info + " | Tag: " + tag);
                     }

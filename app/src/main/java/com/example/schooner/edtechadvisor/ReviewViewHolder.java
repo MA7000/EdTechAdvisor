@@ -9,6 +9,7 @@ import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.RatingBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -26,10 +27,15 @@ public class ReviewViewHolder extends RecyclerView.ViewHolder {
     public TextView answer2;
     public TextView otherComments;
     public TextView answer3;
+    public TextView answer4;
+    public TextView answer5;
     public TextView overallRating;
     public TextView answer6;
     public TextView repeatTest;
     public TextView answer7;
+    public RatingBar rating4;
+    public RatingBar rating5;
+    public RatingBar rating6;
 
 
     public ReviewViewHolder(View itemView, final Context context) {
@@ -40,16 +46,21 @@ public class ReviewViewHolder extends RecyclerView.ViewHolder {
         answer1 = (TextView) itemView.findViewById(R.id.answer1);
         answer2 = (TextView) itemView.findViewById(R.id.answer2);
         answer3 = (TextView) itemView.findViewById(R.id.answer3);
-        answer6 = (TextView) itemView.findViewById(R.id.answer6);
+//        answer4 = (TextView) itemView.findViewById(R.id.answer4);
+        rating4 = (RatingBar) itemView.findViewById(R.id.answer4);
+        rating5 = (RatingBar) itemView.findViewById(R.id.answer5);
+//        answer5 = (TextView) itemView.findViewById(R.id.answer5);
+//        answer6 = (TextView) itemView.findViewById(R.id.answer6);
         answer7 = (TextView) itemView.findViewById(R.id.answer7);
+        rating6 = (RatingBar) itemView.findViewById(R.id.answer6);
 
-        reviewCardView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Toast.makeText(context, userNameResponse.getText(), Toast.LENGTH_SHORT).show();
-
-            }
-        } );
+//        reviewCardView.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Toast.makeText(context, userNameResponse.getText(), Toast.LENGTH_SHORT).show();
+//
+//            }
+//        } );
 
     }
 }

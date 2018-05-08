@@ -7,7 +7,6 @@ android:layout_width="match_parent"
 android:layout_height="wrap_content"
     android:layout_marginLeft = "8dp"
     android:layout_marginRight = "8dp"
-    android:layout_marginBottom="16dp"
     >
 
 <RelativeLayout
@@ -35,7 +34,7 @@ android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_toRightOf="@+id/object_logo"
         android:textSize="30sp"
-        android:text="Class Dojo"
+        android:text=""
 
         />
 
@@ -54,8 +53,7 @@ android:layout_height="wrap_content"
         android:layout_below="@+id/tool_info"
         android:layout_marginTop="16dp"
         android:gravity="right"
-        android:orientation="horizontal"
-        >
+        android:orientation="horizontal">
 
         <Button
             style="@style/AppTheme.Button"
@@ -64,12 +62,12 @@ android:layout_height="wrap_content"
             android:text="Learn More"
             android:id="@+id/learn"/>
 
-        <Button
-            android:id="@+id/review"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Review"
-            />
+        <!--<Button-->
+            <!--android:id="@+id/review"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:text="Review"-->
+            <!--/>-->
 
     </LinearLayout>
 </RelativeLayout>
