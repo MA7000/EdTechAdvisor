@@ -34,16 +34,13 @@ public class SampleTool extends AppCompatActivity {
     private View toolCard;
     private Button learnMore;
     private Button review;
-    private boolean userState;
     private TextView toolName;
     private TextView toolInfo;
     private ImageView logo;
     private String name;
     private String toolId;
     private List <ReviewObject> reviews;
-    private String info;
-    private String imjId;
-    private String tag;
+    private ReviewObject newTool;
 
     private FirebaseDatabase database;
 
@@ -65,8 +62,6 @@ public class SampleTool extends AppCompatActivity {
         toolInfo = toolCard.findViewById(R.id.tool_info);
         logo = toolCard.findViewById(R.id.object_logo);
 
-//        name = toolName.getText().toString();
-
         initialData();
         RecyclerView rerecyclerview = findViewById(R.id.review_recycler_view);
         rerecyclerview.setHasFixedSize(true);
@@ -75,6 +70,7 @@ public class SampleTool extends AppCompatActivity {
 
         Intent suggestIntent = getIntent();
         name = suggestIntent.getStringExtra("NAME_STRING");
+
         System.out.println("-----------------------------------THIS IS MY SENT NAME = " + name);
         toolName.setText(name);
 
@@ -84,6 +80,8 @@ public class SampleTool extends AppCompatActivity {
         msAuth = FirebaseAuth.getInstance();
         database = FirebaseDatabase.getInstance();
         DatabaseReference myRef = database.getReference("tools");
+        final DatabaseReference reviewRef = database.getReference("reviews");
+
 
         myRef.addValueEventListener(new ValueEventListener() {
             @Override
@@ -94,6 +92,8 @@ public class SampleTool extends AppCompatActivity {
                     System.out.println("-----------------------------------THIS IS MY VARIABLE DB NAME = " + dbName);
                     if (dbName.equals(name)) {
                         toolId = postSnapshot.child("toolId").getValue(String.class);
+                        reviewRef.child(toolId).setValue(reviews);
+
                         String info = postSnapshot.child("info").getValue(String.class);
                         toolInfo.setText(info);
                         int imjId = postSnapshot.child("imageId").getValue(int.class);
@@ -115,9 +115,6 @@ public class SampleTool extends AppCompatActivity {
             }
         });
 
-
-
-
         // listen for clicks on the Review button
         review.setOnClickListener(new View.OnClickListener() {
             FirebaseUser user = msAuth.getCurrentUser();
@@ -134,7 +131,8 @@ public class SampleTool extends AppCompatActivity {
                     Toast.makeText(SampleTool.this, "Please log in to review this tool." ,Toast.LENGTH_SHORT).show();
                 }
             }
-        } );}
+        } );
+    }
 
         private void initialData (){
             reviews = new ArrayList<>();

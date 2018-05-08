@@ -99,7 +99,6 @@ public class Review extends AppCompatActivity {
         }
 
         Review newReview = new Review(objectId, name, toolUse, studentDriven, otherComments, repeatUse);
-     //   newReview.save();
     }
 
     public void goToSampleTool (View view) {

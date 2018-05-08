@@ -56,7 +56,6 @@ android:layout_height="match_parent">
                 android:hint="@string/hint_name3"
                 />
 
-
             <EditText
                 android:id="@+id/otherCommentsInput"
                 android:layout_width="match_parent"
@@ -64,26 +63,6 @@ android:layout_height="match_parent">
                 android:layout_margin="16dp"
                 android:hint="@string/hint_name4" />
 
-            <!--<EditText-->
-            <!--android:layout_width="match_parent"-->
-            <!--android:layout_height="wrap_content"-->
-            <!--android:hint="@string/easinessLabel"-->
-            <!--android:layout_margin="16dp"/>-->
-            <!--<RatingBar-->
-            <!--android:layout_width="wrap_content"-->
-            <!--android:layout_height="wrap_content"-->
-            <!--android:layout_gravity="center"-->
-            <!--android:id = "@+id/easeRatingBar"/>-->
-            <!--<EditText-->
-            <!--android:layout_width="match_parent"-->
-            <!--android:layout_height="wrap_content"-->
-            <!--android:hint="@string/userFriendliness"-->
-            <!--android:layout_margin="16dp"/>-->
-            <!--<RatingBar-->
-            <!--android:layout_width="wrap_content"-->
-            <!--android:layout_height="wrap_content"-->
-            <!--android:layout_gravity="center"-->
-            <!--android:id = "@+id/userEaseRatingBar"/>-->
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"

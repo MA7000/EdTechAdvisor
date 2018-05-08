@@ -4,11 +4,13 @@ import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.RatingBar;
 
+import java.io.Serializable;
+
 /**
  * Created by anowens on 5/3/2018.
  */
 
-public class ReviewObject {
+public class ReviewObject implements Serializable {
     public boolean introduceContent;
     public boolean practiceContent;
     public boolean reviewContent;
@@ -35,10 +37,6 @@ public class ReviewObject {
         this.easinessInput = easinessInput;
     }
 
-    public boolean isIntroduceContent() {
-        return introduceContent;
-    }
-
     public void setIntroduceContent(boolean introduceContent) {
         this.introduceContent = introduceContent;
     }
@@ -51,10 +49,6 @@ public class ReviewObject {
         }
     }
 
-    public boolean isPracticeContent() {
-        return practiceContent;
-    }
-
     public void setPracticeContent(boolean practiceContent) {
         this.practiceContent = practiceContent;
     }
@@ -65,10 +59,6 @@ public class ReviewObject {
         } else {
             return "";
         }
-    }
-
-    public boolean isReviewContent() {
-        return reviewContent;
     }
 
     public void setReviewContent(boolean reviewContent) {
@@ -117,10 +107,6 @@ public class ReviewObject {
 
     public void setOverAllInput(float overAllInput) {
         this.overAllInput = overAllInput;
-    }
-
-    public boolean isRepeatTestInput() {
-        return repeatTestInput;
     }
 
     public void setRepeatTestInput(boolean repeatTestInput) {

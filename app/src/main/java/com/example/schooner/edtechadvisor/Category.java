@@ -34,13 +34,6 @@ public class Category extends AppCompatActivity {
         setContentView(R.layout.activity_category);
     }
 
-//    private void initialData() {
-//        tools = new ArrayList<>();
-//        tools.add(new Object("Class Dojo", "Classroom Management App", R.drawable.classdojo2));
-//        tools.add(new Object("Socrative", "Formative Assessment Tool", R.drawable.socrative2));
-//        tools.add(new Object("Kahoot", "Formative Assessment Tool", R.drawable.kahoot2));
-//    }
-
     //these are intents that go to the tool category pages//
     public void goToAdminTools(View view) {
         Intent goToAdminTools = new Intent(this, AdminTools.class);

@@ -38,15 +38,11 @@ public class ReviewsAdapter extends  RecyclerView.Adapter <ReviewViewHolder> {
         @Override
         public void onBindViewHolder(ReviewViewHolder holder,int position){
             ReviewObject review =reviews.get(position);
-//            holder.userNameResponse.setText((CharSequence) review.userNameInput);
             holder.answer1.setText(review.getIntroduceContent() + review.getPracticeContent() + review.getReviewContent());
             holder.answer2.setText(review.studentDrivenInput);
             holder.answer3.setText (review.otherCommentsInput);
             holder.rating4.setRating(review.getEasinessInput());
             holder.rating5.setRating(review.getUserFriendlinessInput());
-//            holder.answer4.setText(String.valueOf(review.getEasinessInput()));
-//            holder.answer5.setText(String.valueOf(review.getUserFriendlinessInput()));
-//            holder.answer6.setText (String.valueOf(review.getOverAllInput()));
             holder.answer7.setText (review.getRepeatTestInput());
             holder.rating6.setRating(review.getOverAllInput());
         }

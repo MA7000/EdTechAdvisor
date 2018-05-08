@@ -55,6 +55,7 @@ public class SuggestActivity extends AppCompatActivity {
     private FirebaseDatabase database;
     private DatabaseReference myRef;
 
+    Intent intent;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -88,6 +89,8 @@ public class SuggestActivity extends AppCompatActivity {
         database = FirebaseDatabase.getInstance();
         myRef = database.getReference("reviews");
 
+        intent = new Intent (this, SampleTool.class);
+
         reviewBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick (View v){
@@ -110,6 +113,10 @@ public class SuggestActivity extends AppCompatActivity {
                 // get ready to access the database
                 myRef.child(toolId).push().setValue(currentReview);
                 System.out.println("----------------------------------------------SUBMITTED working");
+
+                intent.putExtra("NAME_STRING", toolName);
+                intent.putExtra("NEW_TOOL", currentReview);
+                startActivity(intent);
             }
         } );
     }

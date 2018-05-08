@@ -64,30 +64,7 @@
             android:text="Parents can be involved but don't have to be."
             android:layout_marginLeft="20dp"
             android:textColor="@color/colorPrimary"/>
-        <!--<TextView-->
-        <!--android:id="@+id/easiness"-->
-        <!--android:layout_width="wrap_content"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:text="Easiness:" />-->
-        <!--<TextView-->
-        <!--android:id="@+id/answer4"-->
-        <!--android:layout_width="wrap_content"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:text="sample user answer 4"-->
-        <!--android:layout_marginLeft="20dp"-->
-        <!--android:textColor="@color/colorPrimary"/>-->
-        <!--<TextView-->
-        <!--android:id="@+id/userFriendliness"-->
-        <!--android:layout_width="wrap_content"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:text="User Friendliness:" />-->
-        <!--<TextView-->
-        <!--android:id="@+id/answer5"-->
-        <!--android:layout_width="wrap_content"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:text="sample user answer 5"-->
-        <!--android:layout_marginLeft="20dp"-->
-        <!--android:textColor="@color/colorPrimary"/>-->
+
         <TextView
             android:id="@+id/overall"
             android:layout_width="wrap_content"

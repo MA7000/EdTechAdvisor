@@ -7,13 +7,6 @@
     android:orientation = "vertical"
     tools:context="com.example.schooner.edtechadvisor.MainActivity">
 
-    <!--<SearchView-->
-        <!--android:id="@+id/search_viewr"-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:iconifiedByDefault="false"-->
-        <!--android:queryHint="@string/search_hint" />-->
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
@@ -44,17 +37,6 @@
             android:onClick = "goToLibrary"
 
             />
-
-        <!--<Button-->
-            <!--android:layout_width="match_parent"-->
-            <!--android:layout_height="wrap_content"-->
-            <!--android:text="@string/suggest"-->
-            <!--android:id="@+id/suggest"-->
-            <!--android:layout_margin = "4dp"-->
-            <!--android:layout_below="@id/browse"-->
-            <!--style = "@style/AppTheme.Button"-->
-            <!--android:onClick = "suggestTool"-->
-            <!--/>-->
 
         <Button
             android:layout_width = "match_parent"
