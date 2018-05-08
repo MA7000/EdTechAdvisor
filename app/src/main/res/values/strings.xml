@@ -7,7 +7,7 @@
     <string name="filler">"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
 
 </string>
-    <string name="contact_us">If you have any further questions or concerns, feel free to email us at info@edtechadvisor.com.</string>
+    <string name= "contact_us">If you have any further questions or concerns, feel free to email us at info@edtechadvisor.com.</string>
     <string name="tutorial">Tutorials</string>
     <string name="hint_name">What is the name of the tool? </string>
     <string name="hint_name2">What does this tool do? </string>
@@ -21,7 +21,7 @@
     <string name="tab_text_1">Tab 1</string>
     <string name="tab_text_2">Tab 2</string>
     <string name="tab_text_3">Tab 3</string>
-    <string name="filler2">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore </string>
+    <string name = "filler2" translatable="false">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore </string>
 
     <string name = "adminwarning">"We are sorry. There are no administrative ed tech tools to view right now. Please check again later."</string>
     <string name = "admintitle">Administrative Tools</string>
@@ -42,6 +42,7 @@
     <string name = "name">Name</string>
     <string name = "emailHint">School Affliated Email Address</string>
     <string name = "noEmailHint">No account? Sign Up</string>
+    <string name = "share" >"Check out this great app - EdTechAdvisor"</string>
 
 
     <!--Main-->
