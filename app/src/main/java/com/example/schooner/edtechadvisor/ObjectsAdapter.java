@@ -35,7 +35,7 @@ public class ObjectsAdapter  extends RecyclerView.Adapter <ObjectViewHolder> {
             Object object=tools.get(position);
             holder.toolName.setText(object.name);
             holder.toolInfo.setText(object.info);
-            holder.toolPhoto.setImageResource(object.objectId);
+            holder.toolPhoto.setImageResource(object.imageId);
             }
 
     @Override

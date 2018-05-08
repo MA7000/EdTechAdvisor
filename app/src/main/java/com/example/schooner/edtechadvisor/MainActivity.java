@@ -73,8 +73,9 @@ public class MainActivity extends AppCompatActivity {
                 for (DataSnapshot postSnapshot: dataSnapshot.getChildren()) {
                     String name = postSnapshot.child("name").getValue(String.class);
                     String info = postSnapshot.child("info").getValue(String.class);
-                    String objId = postSnapshot.child("objectId").getValue(Long.class).toString();
-                    System.out.println("Tool: " + name + " | Id: " + objId + " | Info: " + info);
+                    String imjId = postSnapshot.child("imageId").getValue(Long.class).toString();
+                    String toolId = postSnapshot.child("toolId").getValue(String.class);
+                    System.out.println("Tool: " + name + " | Image Id: " + imjId + " | Tool Id: " + toolId + " | Info: " + info);
                 }
             }
             @Override

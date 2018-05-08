@@ -20,6 +20,7 @@ public class ObjectViewHolder extends RecyclerView.ViewHolder {
         public TextView toolName;
         public TextView toolInfo;
         public ImageView toolPhoto;
+        public String toolId;
         public Button toolLearn;
         public Button toolReview;
 
